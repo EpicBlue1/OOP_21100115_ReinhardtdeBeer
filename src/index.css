@@ -12,6 +12,27 @@ code {
     monospace;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(15, 50, 84);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 
 .foto{
   height: 120px;
@@ -23,28 +44,37 @@ code {
 
 model-viewer{
   width: 100%;
-  height: 80vh;
+  height: 70vh;
+}
+
+.Description{
+  color: white !important;
+  padding-top: 5vh;
+  padding-left: 5vh;
+  width: 60vh;
+  overflow: auto;
+  height: 35vh;
 }
 
 .dateDisp{
   transform: rotate(-90deg);
-  margin-top: 32vh;
+  margin-top: 23vh;
   color: white;
-  font-size: 28px
+  font-size: 24px
 }
 
 .Title{
-  margin-left: 40%;
-  padding-top: 20vh;
-  padding-left: 25%;
-  width: 50%;
-  height: 80vh;
+  padding-left: 5vh;
+  margin-left: 7%;
+  padding-top: 10vh;
+  width: 60%;
+  height: 60vh;
   background-color: rgba(106, 118, 145, 0.347) !important;
   color: white;
 }
 
 .head_section{
-  height: 80vh !important;
+  height: 60vh !important;
 }
 
 .Background{
@@ -54,4 +84,13 @@ model-viewer{
 
 .Navigation{
   color: white !important;
+}
+
+.navbarImg{
+  margin-right: 20px;
+  width: 50px;
+  height: 50px;
+  background-image: url('img/PUKCOL.png');
+  background-size: cover;
+  border-radius: 150px;
 }

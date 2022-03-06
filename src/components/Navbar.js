@@ -9,14 +9,14 @@ const Navigation = () =>{
         //fragment
         <>
 <Navbar bg="dark" expand="lg">
-  <Container fluid className='Navigation'>
-    <Image src='../img\ARTICLE-CRYPTO-2-1.png'></Image>
-    <Navbar.Brand src='' href="#home">React-Bootstrap</Navbar.Brand>
+  <Container fluid>
+    <div className='navbarImg'></div>
+    <Navbar.Brand src='' className='Navigation' href="#home">React-Bootstrap</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/">Link</Nav.Link>
+        <Nav.Link className='Navigation' href="/">Home</Nav.Link>
+        <Nav.Link className='Navigation' href="/">Link</Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Container>
