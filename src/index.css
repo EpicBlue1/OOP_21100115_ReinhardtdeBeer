@@ -44,7 +44,12 @@ code {
 
 model-viewer{
   width: 100%;
-  height: 70vh;
+  height: 60vh;
+}
+
+.earth{
+  width: 100%;
+  height: 40vh; 
 }
 
 .Description{
@@ -93,4 +98,23 @@ model-viewer{
   background-image: url('img/PUKCOL.png');
   background-size: cover;
   border-radius: 150px;
+}
+
+.Timeline{
+  height: 450px;
+  background-color: #555;
+}
+
+.Graph{
+  height: 450px;
+  background-color: rgb(151, 60, 60);  
+}
+
+.Astroid{
+  background-color: antiquewhite;
+  height: 60vh;
+}
+
+.EarthOne{
+  height: 20vh !important;
 }
