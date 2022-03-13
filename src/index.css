@@ -44,12 +44,12 @@ code {
 
 model-viewer{
   width: 100%;
-  height: 60vh;
+  height: 60vh !important;
 }
 
 .earth{
   width: 100%;
-  height: 40vh; 
+  height: 60vh !important; 
 }
 
 .Description{
@@ -106,15 +106,24 @@ model-viewer{
 }
 
 .Graph{
-  height: 450px;
-  background-color: rgb(151, 60, 60);  
+  height: 350px;
+  background-color: black; 
 }
 
 .Astroid{
-  background-color: antiquewhite;
+  background-color: black;
   height: 60vh;
 }
 
-.EarthOne{
-  height: 20vh !important;
+
+model-viewer, .EarthOne{
+  height: 40vh !important;
 }
+
+.whitebar{
+  height: 5vh !important;
+  width: 100% !important;
+  background-color: rgba(106, 118, 145, 0.347) !important;
+}
+
+

@@ -16,9 +16,9 @@ function App() {
       <Header />
 
       <Routes>
-      <Route path="/" element={<Preview />} />
-      <Route path="/GraphView" element={<Graphs />} />
-      <Route path="/Timeline" element={<Timeline />} />
+      <Route path="/" element={<Preview />} ></Route>
+      <Route path="/GraphView" element={<Graphs />} ></Route>
+      <Route path="/Timeline" element={<Timeline />} ></Route>
       </Routes>
 
     </div>

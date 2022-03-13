@@ -20,24 +20,40 @@ const Preview = () =>{
         //fragment
         <>
         <Container fluid className='Background'>
-        <Row>
-            <Col className='col-3 Astroid'>
+        <Row><div className='whitebar'></div></Row>
+        <Row className='Astroids'>
+            <Col className='col-2.4 Astroid'>
                 <div className='EarthOne'>
-                <model-viewer alt='EarthOne' exposure='50' environment-image='img\2560x1600-2936260-space-dark___cosmos-space-wallpapers.jpg' auto-rotate rotation-per-second='15deg' src='assets/Earth Model.gltf'></model-viewer>
+                <model-viewer alt='Astroid' environment-image='img\kloppenheim_02_1k.hdr' auto-rotate rotation-per-second='15deg' src='assets/AstroidThree.gltf'></model-viewer>
                 </div>
             
             </Col>
-            <Col className='col-3 Astroid'>
-            <div className='EarthOne'>
-                <model-viewer alt='EarthOne' exposure='50' environment-image='img\2560x1600-2936260-space-dark___cosmos-space-wallpapers.jpg' auto-rotate rotation-per-second='15deg' src='assets/Earth Model.gltf'></model-viewer>
-                </div>            </Col>
-            <Col className='col-3 Astroid'>
-            <model-viewer className='EarthOne' alt='EarthOne' exposure='50' environment-image='img\2560x1600-2936260-space-dark___cosmos-space-wallpapers.jpg' auto-rotate rotation-per-second='15deg' src='assets/Earth Model.gltf'></model-viewer>
+            <Col className='col-2.4 Astroid'>
+                
+                <div className='EarthOne'>
+                <model-viewer alt='Astroid' environment-image='img\kloppenheim_02_1k.hdr' auto-rotate rotation-per-second='5deg' src='assets/Astroid.gltf'></model-viewer>
+                </div>
+            
             </Col>
-            <Col className='col-3 Astroid'>
-            <div className='EarthOne'>
-                <model-viewer alt='EarthOne' exposure='50' environment-image='img\2560x1600-2936260-space-dark___cosmos-space-wallpapers.jpg' auto-rotate rotation-per-second='15deg' src='assets/Earth Model.gltf'></model-viewer>
-                </div>            </Col>
+            <Col className='col-2.4 Astroid'>
+                <div className='EarthOne'>
+                <model-viewer alt='Astroid' environment-image='img\kloppenheim_02_1k.hdr' auto-rotate rotation-per-second='15deg' src='assets/AstroidTwo.gltf'></model-viewer>
+                </div>
+            
+            </Col>
+            <Col className='col-2.4 Astroid'>
+                <div className='EarthOne'>
+                <model-viewer alt='Astroid' environment-image='img\kloppenheim_02_1k.hdr' auto-rotate rotation-per-second='15deg' src='assets/AstroidThree.gltf'></model-viewer>
+                </div>
+            
+            </Col>
+            <Col className='col-2.4 Astroid'>
+                <div className='EarthOne'>
+                <model-viewer alt='Astroid' environment-image='img\kloppenheim_02_1k.hdr' auto-rotate rotation-per-second='15deg'  src='assets/Astroid.gltf'></model-viewer>
+                </div>
+            
+            </Col>
+
         </Row>
         </Container>
         </>
