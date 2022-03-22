@@ -34,6 +34,7 @@ code {
 }
 
 
+
 .foto{
   height: 120px;
 }
@@ -91,10 +92,6 @@ a{
   height: 60vh !important;
 }
 
-.Background{
-  background-image: url('img/Earth\ background.png') !important;
-  background-size: cover;
-}
 
 .Navigation{
   color: white !important;
@@ -115,6 +112,12 @@ a{
   background-size: cover;
 }
 
+.Background{
+  background-image: url('img/Earth\ background.png') !important;
+  background-size: cover;
+}
+
+
 .Timeline{
   height: 450px;
   background-color: #555;
@@ -124,25 +127,4 @@ a{
   height: 350px;
   background-color: black; 
 }
-
-.Astroid{
-  background-color: black;
-  height: 60vh;
-}
-
-.whitebar{
-  height: 5vh !important;
-  width: 100% !important;
-  background-color: rgba(255, 255, 255, 0.748) !important;
-}
-
-@media only screen and (max-width: 768px) {
-
-  .Astroid{
-    background-color: black;
-    height: 30vh;
-  }
-  
-}
-
 

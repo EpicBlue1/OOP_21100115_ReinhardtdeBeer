@@ -1,5 +1,4 @@
 import './index.css';
-import './astroid.css';
 import Header from "./components/Header";
 import Navigation from "./components/Navbar";
 import Timeline from "./components/Timeline";
