@@ -10,7 +10,7 @@ const Timeline = () =>{
         <>
         <Container fluid className='Background'>
         <Row>
-            <Col className='col-12 Timeline'>
+            <Col className='col-12 Timeline One'>
             </Col>
         </Row>
         </Container>

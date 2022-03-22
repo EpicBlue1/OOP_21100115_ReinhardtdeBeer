@@ -52,12 +52,17 @@ model-viewer{
   height: 60vh !important; 
 }
 
+a{
+  text-decoration: none !important;
+  color: white !important;
+}
+
 .Description{
   color: white !important;
   padding-top: 5vh;
   padding-left: 5vh;
-  width: 60vh;
-  overflow: auto;
+  width: 100%;
+  overflow-y: scroll;
   height: 35vh;
 }
 
@@ -74,11 +79,15 @@ model-viewer{
   padding-top: 10vh;
   width: 60%;
   height: 60vh;
-  background-color: rgba(106, 118, 145, 0.347) !important;
+  background-color: rgba(255, 255, 255, 0.748) !important;
   color: white;
 }
 
 .head_section{
+  height: 60vh !important;
+}
+
+.head_section model-viewer{
   height: 60vh !important;
 }
 
@@ -100,6 +109,12 @@ model-viewer{
   border-radius: 150px;
 }
 
+.EarthOne{
+  height: 30vh;
+  width: 100%;
+  background-size: cover;
+}
+
 .Timeline{
   height: 450px;
   background-color: #555;
@@ -115,15 +130,19 @@ model-viewer{
   height: 60vh;
 }
 
-
-model-viewer, .EarthOne{
-  height: 40vh !important;
-}
-
 .whitebar{
   height: 5vh !important;
   width: 100% !important;
-  background-color: rgba(106, 118, 145, 0.347) !important;
+  background-color: rgba(255, 255, 255, 0.748) !important;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .Astroid{
+    background-color: black;
+    height: 30vh;
+  }
+  
 }
 
 
