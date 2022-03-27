@@ -33,7 +33,14 @@ code {
   background: #555;
 }
 
-
+.Description p{
+  color: white !important;
+  padding-top: 5vh;
+  padding-left: 5vh;
+  width: 100%;
+  overflow-y: scroll;
+  height: 35vh;
+}
 
 .foto{
   height: 120px;
@@ -58,15 +65,6 @@ a{
   color: white !important;
 }
 
-.Description{
-  color: white !important;
-  padding-top: 5vh;
-  padding-left: 5vh;
-  width: 100%;
-  overflow-y: scroll;
-  height: 35vh;
-}
-
 .dateDisp{
   transform: rotate(-90deg);
   margin-top: 23vh;
@@ -78,14 +76,41 @@ a{
   padding-left: 5vh;
   margin-left: 7%;
   padding-top: 10vh;
-  width: 60%;
+  width: 100%;
   height: 60vh;
-  background-color: rgba(255, 255, 255, 0.748) !important;
-  color: white;
+  color: white !important;
+  background: rgba(133, 133, 133, 0.319);
+  backdrop-filter: blur(5px);
+  box-shadow: -12px -0px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -12px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -12px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.whitebar{
+  height: 10vh;
+  background: rgba(133, 133, 133, 0.319);
+  backdrop-filter: blur(5px);
+  box-shadow: -12px -0px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -12px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -12px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+.Title p{
+  color: white !important;
+  font-size: 12px !important;
+  font-weight: 200 !important;
+}
+
+.Title h1{
+  color: white !important;
+  font-size: 42px !important;
+  font-weight: 600 !important;
 }
 
 .head_section{
   height: 60vh !important;
+
 }
 
 .head_section model-viewer{
@@ -127,4 +152,52 @@ a{
   height: 350px;
   background-color: black; 
 }
+
+button {
+  float: right;
+	width: 150px !important;
+	height: 50px !important;
+	cursor: pointer;
+	background: #333 !important;
+	margin: 10px !important;
+	border: none !important;
+	border-radius: 10px !important;
+	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+	color: #222;
+	font-size: 16px;
+}
+
+.butt button{
+  float:left !important;
+  color: white !important;
+}
+
+.butt{
+  height: 100px;
+  padding-top: 1.5%;
+  margin: 0 auto!important;
+  width: 370px !important;
+}
+
+
+button:hover {
+	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+	font-size: 15px;
+	transition: 100ms;
+}
+
+select{
+  padding: 5px;
+  float: left;
+	width: 250px;
+	height: 50px;
+	cursor: pointer;
+	background: #333 !important;
+	margin: 10px !important;
+	border: 2px solid white !important;
+	border-radius: 10px !important;
+  color: white !important;
+}
+
+
 

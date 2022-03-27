@@ -1,10 +1,12 @@
 import './index.css';
 import Header from "./components/Header";
 import Navigation from "./components/Navbar";
-import Timeline from "./components/Timeline";
-import Preview from "./components/AstroidPreview";
-import Graphs from "./components/GraphView";
 import {Route, Routes} from 'react-router-dom';
+import AsInfo from './components/AsteroidInfo';
+import Asgraph from './components/AstroidGraphs';
+import Timeline from './components/Timeline';
+import Astobj from './components/SubComponents/AstroidObj';
+
 
 function App() {
   return (
@@ -13,11 +15,12 @@ function App() {
 
       <Navigation />
       <Header />
-
+      
       <Routes>
-      <Route path="/" element={<Preview />} ></Route>
-      <Route path="/GraphView" element={<Graphs />} ></Route>
+      <Route path="/" element={<AsInfo />} ></Route>
+      <Route path="/AsInfo" element={<Astobj />} ></Route>
       <Route path="/Timeline" element={<Timeline />} ></Route>
+      <Route path="/AstroidGraphs" element={<Asgraph />} ></Route>
       </Routes>
 
     </div>
