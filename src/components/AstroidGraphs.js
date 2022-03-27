@@ -21,13 +21,20 @@ const AstroidGraphs = () =>{
     useEffect(() => {
         axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-07&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
         .then((res) => {
-            const num = '2015-09-07';
-            const data = res.data.near_earth_objects;
-            console.log(data[num]);
+            const numText = '2015-09-07';
+            const data = res.data.near_earth_objects[numText];
+            const getLength = data.length;            
 
-            // let AsOne = data[2015-09-07]
+            let AsOne = (data[Math.floor(Math.random() * getLength)].estimated_diameter.meters.estimated_diameter_min + data[Math.floor(Math.random() * getLength)].estimated_diameter.meters.estimated_diameter_max) *2;
+            let AsTwo = (data[Math.floor(Math.random() * getLength)].estimated_diameter.meters.estimated_diameter_min + data[Math.floor(Math.random() * getLength)].estimated_diameter.meters.estimated_diameter_max) *2;
+            let AsThree = (data[Math.floor(Math.random() * getLength)].estimated_diameter.meters.estimated_diameter_min + data[Math.floor(Math.random() * getLength)].estimated_diameter.meters.estimated_diameter_max) *2;
+            let AsFour = (data[Math.floor(Math.random() * getLength)].estimated_diameter.meters.estimated_diameter_min + data[Math.floor(Math.random() * getLength)].estimated_diameter.meters.estimated_diameter_max) *2;
+            let AsFive = (data[Math.floor(Math.random() * getLength)].estimated_diameter.meters.estimated_diameter_min + data[Math.floor(Math.random() * getLength)].estimated_diameter.meters.estimated_diameter_max) *2;
 
-            setPieInfo()
+            console.log(data);
+
+
+            setPieInfo([AsOne, AsTwo, AsThree, AsFour, AsFive]);
         })
     }, []) //only run once
 
@@ -37,11 +44,11 @@ const AstroidGraphs = () =>{
         <Col>
             <div className="GraphOne">
                 <Pie data = {{
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+                labels: ['Astroid 1', 'Astroid 2', 'Astroid 3', 'Astroid 4', 'Astroid 5'],
                 datasets: [
                 {
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2],
+                data: PieInfo,
                 backgroundColor: [
                     'rgba(152,198,240, 0.5)',
                     'rgba(121,162,234, 0.5)',
