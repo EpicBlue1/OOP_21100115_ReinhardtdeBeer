@@ -34,9 +34,17 @@ const Header = () =>{
                     <option>Option Four</option>
                     <option>Option Five</option>
                 </select>
+                
+                <select className='dateSelTwo'>
+                    <option>Objects View</option>
+                    <option>Graph</option>
+                    <option>Timeline</option>
+                </select>
+                {/* <button class="btn btn-primary chartSel"><Link to="/">Astroid Preview</Link></button>
+                <button class="btn btn-primary chartSel"><Link to="/Timeline">Timeline</Link></button>
+                <button class="btn btn-primary chartSel"><Link to="/AstroidGraphs">Graph View</Link></button> */}
 
-                <button class="btn btn-primary chartSel"><Link to="/AsGraph">Chart View</Link></button>
-                <button class="btn btn-primary chartSel"><Link to="/AsGraph">Astroid Preview</Link></button>
+
 
             
             </div></Row>

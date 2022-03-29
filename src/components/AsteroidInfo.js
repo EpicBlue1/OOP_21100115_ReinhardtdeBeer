@@ -12,13 +12,7 @@ import './SubComponents/AstroidObjects.css';
 const AsteroidInfo = () => {
     return (
         <Container fluid className="InfoCon">
-            <Row>
-                <div className="butt">
-                    <button>Graph View</button>
-                    <button>Timeline</button>
-                </div>
-            </Row>
-            <Row>
+            <Row className='AsobjHeight'>
                 <Asobj/>
             </Row>
             

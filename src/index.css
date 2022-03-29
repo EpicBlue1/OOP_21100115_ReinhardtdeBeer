@@ -87,12 +87,19 @@ a{
 }
 
 .whitebar{
-  height: 10vh;
+  height: max-content;
   background: rgba(133, 133, 133, 0.319);
   backdrop-filter: blur(5px);
   box-shadow: -12px -0px 5px 0px rgba(0,0,0,0.75);
   -webkit-box-shadow: -12px 0px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: -12px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+h2{
+  padding-top: 3%;
+  padding-bottom: 2%;
+  text-align: center;
+  color: white;
 }
 
 
@@ -186,7 +193,7 @@ button:hover {
 	transition: 100ms;
 }
 
-select{
+.dateSel{
   padding: 5px;
   float: left;
 	width: 250px;
@@ -199,5 +206,17 @@ select{
   color: white !important;
 }
 
+.dateSelTwo{
+  padding: 5px;
+  float: Right;
+	width: 250px;
+	height: 50px;
+	cursor: pointer;
+	background: #333 !important;
+	margin: 10px !important;
+	border: 2px solid white !important;
+	border-radius: 10px !important;
+  color: white !important;
+}
 
 

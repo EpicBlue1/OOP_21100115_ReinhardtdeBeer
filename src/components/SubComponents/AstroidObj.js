@@ -6,7 +6,7 @@ import './AstroidObjects.css';
 
 const AstroidObject = () =>{
     return (
-        <>
+
         <Col className="AsCon col">
             <h3>Astroid Name</h3>
             <div className="AsImg"></div>
@@ -14,24 +14,6 @@ const AstroidObject = () =>{
             <p>Size</p>
             <p>Date</p>   
         </Col>
-        <Col className="AsCon col">
-            <h3>Astroid Name</h3>
-            <img />
-        </Col>
-        <Col className="AsCon col">
-            <h3>Astroid Name</h3>
-            <img />
-        </Col>
-        <Col className="AsCon col">
-            <h3>Astroid Name</h3>
-            <img />
-        </Col>
-        <Col className="AsCon col">
-            <h3>Astroid Name</h3>
-            <img />
-        </Col>
-        </>
-        
     )
 }
 

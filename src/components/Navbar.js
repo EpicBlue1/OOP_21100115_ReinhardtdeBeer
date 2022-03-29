@@ -12,7 +12,7 @@ const Navigation = () =>{
 <Navbar bg="dark" expand="lg">
   <Container fluid>
     <div className='navbarImg'></div>
-    <Navbar.Brand className='Navigation'>Title</Navbar.Brand>
+    <Navbar.Brand className='Navigation'>NEO</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">

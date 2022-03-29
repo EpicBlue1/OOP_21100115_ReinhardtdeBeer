@@ -5,13 +5,15 @@ import Col from 'react-bootstrap/Col';
 import './SubComponents/AstroidObjects.css';
 import React from 'react';
 import { faker } from '@faker-js/faker';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Chart as ChartJS, ArcElement, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
+import AsGra from './SubComponents/AsteroidRadar';
 
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+
+ChartJS.register(ArcElement, Tooltip, RadialLinearScale, PointElement, LineElement, Filler, Legend);
 
 
 const AstroidGraphs = () =>{
@@ -43,8 +45,9 @@ const AstroidGraphs = () =>{
     <Row>
         <Col>
             <div className="GraphOne">
+                <h2>Near Earth Objects on 2020/05/15</h2>
                 <Pie data = {{
-                labels: ['Astroid 1', 'Astroid 2', 'Astroid 3', 'Astroid 4', 'Astroid 5'],
+                labels: ['Object 1', 'Object 2', 'Object 3', 'Object 4', 'Object 5'],
                 datasets: [
                 {
                 label: '# of Votes',
@@ -71,7 +74,10 @@ const AstroidGraphs = () =>{
             </div>
         </Col>
         <Col>
-            <div className="GraphTwo"></div>
+            <div className="GraphTwo">
+            <h2>Object Stats</h2>
+                <AsGra />
+            </div>
         </Col>
     </Row>
     </Container>
