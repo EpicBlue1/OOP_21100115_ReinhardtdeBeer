@@ -1,7 +1,7 @@
 .GraphOne{
     margin: 0 auto;
     width: 90%;
-    height: 90vh;
+    height: 94%;
     background-color: #1b1b1b;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -13,7 +13,7 @@
 .GraphTwo{
     margin: 0 auto;
     width: 90% !important;
-    height: 90vh;
+    height: 94%;
     background-color: #1b1b1b;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -40,14 +40,16 @@
 }
 
 .AsCon{
+    margin-left: 3vh !important;
     width: 100%;
-    height: 400px;
+    height: 580px;
     background-color: #3b3b3b;
     border-radius: 10px !important;
     margin: 10px;
     padding: 20px;
     text-align: center;
     color: #999;
+    overflow-x: auto;
 }
 
 .AsGraph{
@@ -74,5 +76,19 @@
 }
 
 .AsobjHeight{
-    padding-top: 3%;
+    margin: 0 auto !important;
+    padding-top: 1%;
+    padding-left: 9vh;
+}
+
+.Heading{
+    text-align: center;
+    padding-top: 1%;
+    color: white;
+}
+
+.Buttons{
+    padding-top: 1%;
+    width: max-content!important;
+    margin: 0 auto !important;
 }
