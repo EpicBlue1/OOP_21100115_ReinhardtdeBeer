@@ -15,19 +15,22 @@ import {Link} from 'react-router-dom';
 
 
 
+
 ChartJS.register(ArcElement, Tooltip, RadialLinearScale, PointElement, LineElement, Filler, Legend);
+
+
 
 
 const AstroidGraphs = () =>{
 
-    const [PieInfo, setPieInfo] = useState([]);
-    const [Someinfo, setSomeinfo] = useState([]);
-    const [RadarInfo, setRadarInfo] = useState([]);
-    const [DispData, setDispData] = useState([]);
+    const [RadInfo, setRadInfo] = useState([]);
+    const [RadData, setRadData] = useState([]);
+
+    const RadarGr = [];
+
+
     // const [labels, setLabels] = useState([]);
 
-
-    const Radar = [];
 
     useEffect(() => {
         axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-07&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
@@ -35,15 +38,99 @@ const AstroidGraphs = () =>{
             const numText = '2015-09-07';
             const data = res.data.near_earth_objects[numText];
 
-            // for(let i = 0; i < data.length; i++){
-                
-            //         // Name: 'Object ' + [i] + ' ' + data[i].name, 
-            //         // EstDia: (data[i].estimated_diameter.meters.estimated_diameter_min + data[i].estimated_diameter.meters.estimated_diameter_max) *2
-            //         let lol = 'Object ' + [i] + ' ' + data[i].name;
-            //     // Radar.push({})
-            //     Someinfo.push(lol)
+            var totalM = 0;
+            for(var i = 0; i < data.length; i++) {
+                totalM += data[i].absolute_magnitude_h;
+            }
+            var avgM = totalM / data.length;
 
-            // }
+            var totalS = 0;
+            for(var i = 0; i < data.length; i++) {
+                totalS += ((data[i].estimated_diameter.meters.estimated_diameter_max + data[i].estimated_diameter.meters.estimated_diameter_max) / 2);
+            }
+            var avgS = totalS / data.length;
+
+            var textOne = 0;
+            var textTwo = 0;
+
+            var totalV = 0;
+            for(var i = 0; i < data.length; i++) {
+                textOne = data[i].close_approach_data[0].relative_velocity.kilometers_per_hour;
+                var numOne = parseInt(textOne);
+                totalV += numOne;
+            }
+            var avgV = totalV / data.length;
+
+            console.log(avgV)
+
+            var totalMD = 0;
+            for(var i = 0; i < data.length; i++) {
+                textTwo = data[i].close_approach_data[0].miss_distance.kilometers;
+                var numTwo = parseInt(textTwo);
+                totalMD +=  numTwo;
+            }
+            var avgMD = totalMD / data.length;
+            
+
+            for(let i = 0; i < 5; i++) {
+                let potentially = data[i].is_potentially_hazardous_asteroid;
+                let AssName = 'Object ' + [i] + ' ' + data[i].name;
+
+                let magPerc = (avgM / data[i].absolute_magnitude_h) * 100;
+                if(magPerc > 100){
+                    magPerc = 100;
+                }
+
+                let magSi = (avgS /  (data[i].estimated_diameter.meters.estimated_diameter_max + data[i].estimated_diameter.meters.estimated_diameter_max)) * 100;
+                if(magSi > 100){
+                    magSi = 100;
+                }
+
+                let magVol = (avgV / data[i].close_approach_data[0].relative_velocity.kilometers_per_hour) * 100;
+                if(magVol > 100){
+                    magVol = 100;
+                }
+
+                let magMd = (avgMD / data[i].close_approach_data[0].miss_distance.kilometers) * 100;
+                if(magMd > 100){
+                    magMd = 100;
+                }
+
+                console.log(magMd)
+
+
+                RadarGr.push({
+                    Number: i,
+                    Name: AssName,
+                    MissDistance: magMd,
+                    Size: magSi,
+                    Velocity: magVol,
+                    Magnitude: magPerc,
+                    potentiallyHazardous: potentially.toString(),
+                    Date: data[i].close_approach_data[0].close_approach_date_full,
+                    })
+                
+            }
+
+            let Items = RadarGr.map((item) => <AsGra date={item.Date} num={item.Number} name={item.Name} PH={item.potentiallyHazardous} magnitude={item.Magnitude} velocity={item.Velocity} size={item.Size} MD={item.MissDistance}/>)
+            setRadData(Items);
+
+
+        })
+
+    }, []) //only run once
+
+    const [PieInfo, setPieInfo] = useState([]);
+    const [Someinfo, setSomeinfo] = useState([]);
+    const [RadarInfo, setRadarInfo] = useState([]);
+    const [DispData, setDispData] = useState([]);
+    // const [labels, setLabels] = useState([]);
+
+    useEffect(() => {
+        axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-07&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
+        .then((res) => {
+            const numText = '2015-09-07';
+            const data = res.data.near_earth_objects[numText];
 
 
             const getLength = data.length;            
@@ -119,7 +206,7 @@ const AstroidGraphs = () =>{
         <Col>
             <div className="GraphTwo">
             <h2>Object Stats</h2>
-                <AsGra />            
+            {RadData}
             </div>
         </Col>
     </Row>

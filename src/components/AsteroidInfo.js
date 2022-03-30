@@ -31,12 +31,14 @@ const AsteroidInfo = () => {
             const data = res.data.near_earth_objects[numText];
             console.log(data);
 
-            for(let i = 0; i < data.length; i++) {
-                let potentially = data[i].is_potentially_hazardous_asteroid;
+                for(let i = 0; i < data.length; i++) {
+                    let AssName = 'Object ' + [i] + ' ' + data[i].name;
+                    let potentially = data[i].is_potentially_hazardous_asteroid;
+
 
                     Radar.push({
                         Number: i,
-                        Name: data[i].name,
+                        Name: AssName,
                         MissDistance: data[i].close_approach_data[0].miss_distance.kilometers,
                         Size: (data[i].estimated_diameter.meters.estimated_diameter_max + data[i].estimated_diameter.meters.estimated_diameter_max) / 2,
                         Velocity: data[i].close_approach_data[0].relative_velocity.kilometers_per_hour,
@@ -47,9 +49,7 @@ const AsteroidInfo = () => {
                 
             }
 
-            console.log(Radar[1].Name)
 
-            setPieInfo([Radar]);
 
             let startItem = Radar.map((item) => <Astobj date={item.Date} num={item.Number} name={item.Name} PH={item.potentiallyHazardous} magnitude={item.Magnitude} velocity={item.Velocity} size={item.Size} MD={item.MissDistance}/>)
             setDispData(startItem);
