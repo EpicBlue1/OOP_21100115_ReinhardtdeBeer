@@ -9,9 +9,8 @@ const AstroidObject = (props) =>{
     return (
 
         <Col className="AsCon col-4 col-md-2">
-            <h3>Object {props.num}</h3>
-            <div className="AsImg"></div>
-            <p>Name: {props.name}</p>
+            <h3>{props.name}</h3>
+            <div ><img className="AsImg" src={props.pic}/></div>
             <p>Size: {props.size}m</p>
             <p>Date: {props.date}</p>
             <p>Magnitude: {props.magnitude}</p>   

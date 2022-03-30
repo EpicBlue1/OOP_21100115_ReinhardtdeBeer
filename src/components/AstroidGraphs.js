@@ -29,14 +29,13 @@ const AstroidGraphs = () =>{
     const RadarGr = [];
 
 
-    // const [labels, setLabels] = useState([]);
-
-
     useEffect(() => {
         axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-07&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
         .then((res) => {
             const numText = '2015-09-07';
             const data = res.data.near_earth_objects[numText];
+            var textOne = 0;
+            var textTwo = 0;
 
             var totalM = 0;
             for(var i = 0; i < data.length; i++) {
@@ -49,9 +48,6 @@ const AstroidGraphs = () =>{
                 totalS += ((data[i].estimated_diameter.meters.estimated_diameter_max + data[i].estimated_diameter.meters.estimated_diameter_max) / 2);
             }
             var avgS = totalS / data.length;
-
-            var textOne = 0;
-            var textTwo = 0;
 
             var totalV = 0;
             for(var i = 0; i < data.length; i++) {
