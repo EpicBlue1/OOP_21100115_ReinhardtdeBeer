@@ -78,3 +78,13 @@
     width: max-content!important;
     margin: 0 auto !important;
 }
+
+.Descript{
+    margin: 0 auto;
+    padding: 20px !important;
+    width: 80% !important;
+    height: 20vh;
+    background-color: #3b3b3b85;
+    border-radius: 10px;
+    color: #999;
+}

@@ -11,19 +11,6 @@ import { useState, useEffect, useRef } from 'react';
 //navigation
 const Header = () =>{
 
-    useEffect(() => {
-        axios.get('https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC').then((response) => {
-            let data = response.data;
-
-            for(let i = 0; i < data.length; i++){
-                console.log("Hey");
-
-                if(data[i].near_earth_objects[0].close_approach_data[i].close_approach_date == "1900-12-27"){
-                    console.log("Hey");
-                }
-            }
-        })
-    },[])
 
     return(
         //fragment
