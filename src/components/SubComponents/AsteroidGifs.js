@@ -1,26 +1,13 @@
-import Container from 'react-bootstrap/Container';
-import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Asgraph from './AstroidGraphs';
-import Asobj from './SubComponents/AstroidObj';
-import TimeLine from './Timeline';
 import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
-import AsGra from './SubComponents/AsteroidRadar';
-import Astobj from './SubComponents/AstroidObj';
+import Astobj from './AstroidObj';
 import {Link} from 'react-router-dom';
-import Optionbar from './SubComponents/OptionBar'
-import Gifs from './SubComponents/AsteroidGifs'
-
-
-
-import './SubComponents/AstroidObjects.css';
+import Gifs from './AsteroidGifs'
+import './AstroidObjects.css';
 
 const AsteroidInfo = () => {
 
-    const [PieInfo, setPieInfo] = useState([]);
-    const [RadarInfo, setRadarInfo] = useState([]);
     const [DispData, setDispData] = useState([]);
 
     const Radar = [];
@@ -100,37 +87,12 @@ const AsteroidInfo = () => {
 
     }, []) //only run once
 
-    useEffect(() => {
-        axios.get('https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC').then((response) => {
-            let data = response.data.near_earth_objects;
-
-            for(let i = 0; i < data.length; i++){
-                let string = data[i].close_approach_data[i].close_approach_date;
-                let sliced = string.slice(0,4);
-                console.log(sliced);
-                if(data[i].close_approach_data[i].close_approach_date == "1900-12-27"){
-                    console.log("Hey");
-                }
-            }
-        })
-    },[])
-
 
     
     return (
-        <Container fluid className="InfoCon">
-            <Row><h1 className="Heading">Near Earth Objects 2015 September</h1></Row>
-            <Optionbar />
-            <Row>
-                <div className="Buttons">
-                    <button className="btn btn-primary"><Link to="/AstroidGraphs">Graph View</Link></button>
-                    <button className="btn btn-primary"><Link to="/">Astroid Preview</Link></button>
-                </div>
-            </Row>
-            <Row className='AsobjHeight'>
+        <div className="AstroidHold">
             {DispData}
-            </Row>
-        </Container>
+        </div>
     )
 }
 

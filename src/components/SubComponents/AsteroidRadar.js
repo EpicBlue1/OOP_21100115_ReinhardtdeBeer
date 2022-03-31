@@ -23,7 +23,6 @@ const AstroidObject = (props) =>{
 
     return (
         <>
-        <Col className="AsGraph col">
             <Radar data = {{
                 labels: ["Miss Distance", "Size", "Velocity", "Magnitude"],
                 datasets: [
@@ -40,7 +39,6 @@ const AstroidObject = (props) =>{
                 }}
             />
             <p>Is Potentially Hazardous: {props.PH}</p>
-        </Col>
         </>
         
     )
