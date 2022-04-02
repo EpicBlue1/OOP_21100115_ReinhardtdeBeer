@@ -2,7 +2,6 @@ import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import AsInfo from './AsteroidInfo';
 import Asgraph from './AstroidGraphs';
 import Timeline from './Timeline';
 import Astobj from './SubComponents/AstroidObj';
@@ -11,6 +10,8 @@ import Pie from './SubComponents/AsGraph'
 import Line from './Timeline'
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import Header from './Header'
+
 
 const Dash = () => {
 
@@ -94,9 +95,11 @@ const Dash = () => {
     
      return(
         <>
+        <Header/>
         <Row className="ConDash">
             <Col className="col-4">
             <div className="PieChart">
+            <h2 className="DashH2">5 Near Earth Objects 2015</h2>
                 <Pie />
             </div>
             </Col>
@@ -111,14 +114,20 @@ const Dash = () => {
             <Col className="col-12">
             <Col className="col-4 float">
             <div className="infoblock">
+                <h2>Total near earth objects</h2>
+                <p className="Number">1300</p>
             </div>
             </Col>
             <Col className="col-4 float">
             <div className="infoblockOne">
+                <h2>Total potentially hazardous Objects</h2>
+                <p className="Number">1300</p>
             </div>
             </Col>
             <Col className="col-4 float">
             <div className="infoblock">
+            <h2>Average miss dinstance</h2>
+            <p className="Number">1300</p>
             </div>
             </Col>
 

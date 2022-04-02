@@ -40,9 +40,7 @@ const AstroidGraphs = () =>{
 
         <Col>
             <div className="GraphOne">
-                <div className="AsGraph">
                 <GraphRadars/>
-                </div>
             </div>
         </Col>
         </Row>

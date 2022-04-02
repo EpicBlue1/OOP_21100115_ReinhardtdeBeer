@@ -12,19 +12,6 @@ const Header = () =>{
 
     return(
         //fragment
-        <>
-        <Container fluid>
-        <Row>
-            <div className='navStyling'>
-                <div className='navbarImg'></div>
-                <div className='navbTex'><p className='orange'>N</p><p>EO</p></div>
-                <div className='Icons'>
-                    <div className='IconOne'></div>
-                    <div className='IconTwo'></div>
-                    <div className='IconThree'></div>
-                </div>
-            </div>
-        </Row>
         <Row>
             <Col className='col-2 head_section'><div className='dateDispStyle'><p className='dateDisp'>1 April 2022</p></div></Col>
             <Col className='col-7 head_section'>
@@ -39,8 +26,6 @@ const Header = () =>{
                 </div>
             </Col>
         </Row>
-        </Container>
-        </>
     )
 }
 
