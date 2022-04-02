@@ -17,6 +17,7 @@ const Header = () =>{
         <Row>
             <div className='navStyling'>
                 <div className='navbarImg'></div>
+                <div className='navbTex'><p className='orange'>N</p><p>EO</p></div>
                 <div className='Icons'>
                     <div className='IconOne'></div>
                     <div className='IconTwo'></div>
@@ -25,8 +26,8 @@ const Header = () =>{
             </div>
         </Row>
         <Row>
-            <Col className='col-1 head_section'><div className='dateDispStyle'><p className='dateDisp'>Date</p></div></Col>
-            <Col className='col-8 head_section'>
+            <Col className='col-2 head_section'><div className='dateDispStyle'><p className='dateDisp'>1 April 2022</p></div></Col>
+            <Col className='col-7 head_section'>
             <div className='Title'>
                 <h1>Welcome</h1>
                 <p className='Description'>Lorem ipsum lor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.nt laborum</p>

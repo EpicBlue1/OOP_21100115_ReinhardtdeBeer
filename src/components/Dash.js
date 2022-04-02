@@ -8,6 +8,7 @@ import Timeline from './Timeline';
 import Astobj from './SubComponents/AstroidObj';
 import Dashboard from './Dash';
 import Pie from './SubComponents/AsGraph'
+import Line from './Timeline'
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
@@ -19,21 +20,20 @@ const Dash = () => {
 
 
     useEffect(() => {
-        axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-07&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
+        axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
         .then((res) => {
             const numText = '2015-09-07';
             const data = res.data.near_earth_objects[numText];
             console.log(data);
 
             var AsterTot = 0;
-            for(var i = 0; i < data.length; i++) {
-                AsterTot += (data[i].estimated_diameter.meters.estimated_diameter_max + data[i].estimated_diameter.meters.estimated_diameter_max) / 2;
+            for(let j = 0; j < data.length; j++) {
+            AsterTot += (data[j].estimated_diameter.meters.estimated_diameter_max + data[j].estimated_diameter.meters.estimated_diameter_max) / 2;
             }
-            var Averagesize = AsterTot / data.length;
+                var Averagesize = AsterTot / data.length;
 
-
-
-        for(let i = 0; i < 5; i++) {
+            for(let i = 1; i < 6; i++) {
+                AsterTot += (data[i].estimated_diameter.meters.estimated_diameter_max + data[i].estimated_diameter.meters.estimated_diameter_max) / 2;
                     let AssName = 'Object ' + [i] + ' ' + data[i].name;
                     let potentially = data[i].is_potentially_hazardous_asteroid;
                     let AsSize = (data[i].estimated_diameter.meters.estimated_diameter_max + data[i].estimated_diameter.meters.estimated_diameter_max) / 2;
@@ -42,7 +42,7 @@ const Dash = () => {
                     if(AsPercent > 100){
                         AsPercent = 100;
                     }
-                    console.log(AsPercent)
+                    console.log(Averagesize)
 
                     let picture = "";
 
@@ -74,7 +74,7 @@ const Dash = () => {
                         Number: i,
                         Name: AssName,
                         MissDistance: data[i].close_approach_data[0].miss_distance.kilometers,
-                        Size: (data[i].estimated_diameter.meters.estimated_diameter_max + data[i].estimated_diameter.meters.estimated_diameter_max) / 2,
+                        Size: AsSize,
                         Velocity: data[i].close_approach_data[0].relative_velocity.kilometers_per_hour,
                         Magnitude: data[i].absolute_magnitude_h,
                         potentiallyHazardous: potentially.toString(),
@@ -95,23 +95,35 @@ const Dash = () => {
      return(
         <>
         <Row className="ConDash">
-        <Col className="col-4">
-        <div className="PieChart">
+            <Col className="col-4">
+            <div className="PieChart">
                 <Pie />
             </div>
-         </Col>
-         <Col className="col-8">
-            <div className="TimeChart">
+            </Col>
+            <Col className="LinePrew col-8">
+                <Line/>
+            </Col>
+
+            <Col className="col-12 AsPrewCon">
+            {DispData}
+            </Col>
+
+            <Col className="col-12">
+            <Col className="col-4 float">
+            <div className="infoblock">
             </div>
-         </Col>
-         </Row>
-        <Row className="AsPrew">
-                  <Col className="col-12">
-                  <div className="AsPrewAsteroid">
-                      {DispData}
-                  </div>
-                   </Col>
-                  </Row>
+            </Col>
+            <Col className="col-4 float">
+            <div className="infoblockOne">
+            </div>
+            </Col>
+            <Col className="col-4 float">
+            <div className="infoblock">
+            </div>
+            </Col>
+
+            </Col>
+        </Row>
          </>
      )
  }

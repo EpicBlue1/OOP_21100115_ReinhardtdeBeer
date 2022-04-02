@@ -24,7 +24,7 @@ const AsGraphsOne = () =>{
 
 
     useEffect(() => {
-        axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-07&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
+        axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
         .then((res) => {
             const numText = '2015-09-07';
             const data = res.data.near_earth_objects[numText];
@@ -121,9 +121,6 @@ const AsGraphsOne = () =>{
         .then((res) => {
             const numText = '2015-09-07';
             const data = res.data.near_earth_objects[numText];
-
-
-            const getLength = data.length;            
 
             // let AsOne = data[2015-09-07]
             let AsOne = (data[0].estimated_diameter.meters.estimated_diameter_min + data[1].estimated_diameter.meters.estimated_diameter_max) *2;
