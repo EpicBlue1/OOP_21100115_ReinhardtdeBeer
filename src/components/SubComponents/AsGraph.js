@@ -60,7 +60,7 @@ const AsGraphsOne = () =>{
             var avgMD = totalMD / data.length;
             
 
-            for(let i = 0; i < 5; i++) {
+            for(let i = 0; i < 1; i++) {
                 let potentially = data[i].is_potentially_hazardous_asteroid;
                 let AssName = 'Object ' + [i] + ' ' + data[i].name;
 
@@ -120,19 +120,19 @@ const AsGraphsOne = () =>{
             // let AsOne = data[2015-09-07]
             let AsOne = (data[0].estimated_diameter.meters.estimated_diameter_min + data[1].estimated_diameter.meters.estimated_diameter_max) *2;
             let AsTwo = (data[1].estimated_diameter.meters.estimated_diameter_min + data[2].estimated_diameter.meters.estimated_diameter_max) *2;
-            let AsThree = (data[2].estimated_diameter.meters.estimated_diameter_min + data[3].estimated_diameter.meters.estimated_diameter_max) *2;
-            let AsFour = (data[3].estimated_diameter.meters.estimated_diameter_min + data[4].estimated_diameter.meters.estimated_diameter_max) *2;
-            let AsFive = (data[4].estimated_diameter.meters.estimated_diameter_min + data[5].estimated_diameter.meters.estimated_diameter_max) *2;
+            // let AsThree = (data[2].estimated_diameter.meters.estimated_diameter_min + data[3].estimated_diameter.meters.estimated_diameter_max) *2;
+            // let AsFour = (data[3].estimated_diameter.meters.estimated_diameter_min + data[4].estimated_diameter.meters.estimated_diameter_max) *2;
+            // let AsFive = (data[4].estimated_diameter.meters.estimated_diameter_min + data[5].estimated_diameter.meters.estimated_diameter_max) *2;
 
             let AsOneName = 'Object ' + [0] + ' ' + data[1].name;
             let AsTwoName = 'Object ' + [1] + ' ' + data[2].name;
-            let AsThreeName = 'Object ' + [2] + ' ' + data[3].name;
-            let AsFourName = 'Object ' + [3] + ' ' + data[4].name;
-            let AsFiveName = 'Object ' + [4] + ' ' + data[5].name;
+            // let AsThreeName = 'Object ' + [2] + ' ' + data[3].name;
+            // let AsFourName = 'Object ' + [3] + ' ' + data[4].name;
+            // let AsFiveName = 'Object ' + [4] + ' ' + data[5].name;
 
 
-            setPieInfo([AsOne, AsTwo, AsThree, AsFour, AsFive]);
-            setDispData([AsOneName, AsTwoName, AsThreeName, AsFourName, AsFiveName]);
+            setPieInfo([AsOne, AsTwo]);
+            setDispData([AsOneName, AsTwoName]);
 
 
         })

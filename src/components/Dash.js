@@ -6,7 +6,7 @@ import Asgraph from './AstroidGraphs';
 import Timeline from './SubComponents/TimelineDash';
 import Astobj from './SubComponents/AstroidObj';
 import Dashboard from './Dash';
-import Pie from './SubComponents/AsGraph'
+import Pie from './SubComponents/ChartDash'
 import Line from './SubComponents/TimelineDash'
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
@@ -23,12 +23,75 @@ const Dash = () => {
 
     const Radar = [];
 
+    useEffect(() => {
+        axios.get('https://api.nasa.gov/neo/rest/v1/feed?api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
+        .then((res) => {
+            let date = new Date();
+            let Day = date.getDate();
+            let DayText = Day.toString();
+
+            if(Day < 10){
+                Day = "0" + DayText;
+            }
+
+            let Month = (date.getMonth()+1);
+            let MonthText = Month.toString();
+            if(Month < 10){
+                Month = "0" + MonthText;
+            }
+
+            let Year = date.getFullYear();
+            let YearText = Year.toString();
+
+            let DateFull = YearText + "-" + Month + "-" + Day;
+            const data = res.data.near_earth_objects[DateFull];
+
+
+            var TotalNear = 0;
+            let AvSize = 0
+
+            for(let j = 0; j < data.length; j++) {
+                TotalNear += data.length;
+                AvSize += (data[j].estimated_diameter.meters.estimated_diameter_max + data[j].estimated_diameter.meters.estimated_diameter_max) / 2;
+            }
+            let AverageSize = AvSize / data.length;
+            let AvSizeRound = Math.round(AverageSize * 100) / 100 + "m";
+
+            let AvMiss = 0;
+            let AvMissText = "";
+
+            for(let j = 0; j < data.length; j++) {
+                AvMissText = data[j].close_approach_data[0].miss_distance.kilometers;
+                AvMiss += parseInt(AvMissText);
+
+            }
+            let AverageMiss = AvMiss / data.length;
+            let AvMissRound = Math.round(AverageMiss * 100) / 100 + "km";
+
+
+            console.log(TotalNear);
+
+            setAverMiss(AvMissRound);
+            setAverSize(AvSizeRound);
+            setTotNearObj(TotalNear);
+            setTodate(DateFull);
+
+
+            // var AllObjects = 0;
+            // for(let j = 0; j < data.length; j++) {
+            //     AllObjects += (data[j].estimated_diameter.meters.estimated_diameter_max + data[j].estimated_diameter.meters.estimated_diameter_max) / 2;
+            // }
+            // var Averagesize = AllObjects / data.length;
+})
+
+    }, []) //only run once
+
 
     useEffect(() => {
-        axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
+        axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=' + Todate + '&end_date=' + Todate + '&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
         .then((res) => {
             const numText = '2015-09-07';
-            const data = res.data.near_earth_objects[numText];
+            const data = res.data.near_earth_objects[Todate];
             console.log(data);
 
             var AsterTot = 0;
@@ -97,69 +160,6 @@ const Dash = () => {
 })
 
     }, []) //only run once
-
-    useEffect(() => {
-        axios.get('https://api.nasa.gov/neo/rest/v1/feed?api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
-        .then((res) => {
-            let date = new Date();
-            let Day = date.getDate();
-            let DayText = Day.toString();
-
-            if(Day < 10){
-                Day = "0" + DayText;
-            }
-
-            let Month = (date.getMonth()+1);
-            let MonthText = Month.toString();
-            if(Month < 10){
-                Month = "0" + MonthText;
-            }
-
-            let Year = date.getFullYear();
-            let YearText = Year.toString();
-
-            let DateFull = YearText + "-" + Month + "-" + Day;
-            const data = res.data.near_earth_objects[DateFull];
-
-
-            var TotalNear = 0;
-            let AvSize = 0
-
-            for(let j = 0; j < data.length; j++) {
-                TotalNear += data.length;
-                AvSize += (data[j].estimated_diameter.meters.estimated_diameter_max + data[j].estimated_diameter.meters.estimated_diameter_max) / 2;
-            }
-            let AverageSize = AvSize / data.length;
-            let AvSizeRound = Math.round(AverageSize * 100) / 100 + "m";
-
-            let AvMiss = 0;
-            let AvMissText = "";
-
-            for(let j = 0; j < data.length; j++) {
-                AvMissText = data[j].close_approach_data[0].miss_distance.kilometers;
-                AvMiss += parseInt(AvMissText);
-
-            }
-            let AverageMiss = AvMiss / data.length;
-            let AvMissRound = Math.round(AverageMiss * 100) / 100 + "km";
-
-
-            console.log(TotalNear);
-
-            setAverMiss(AvMissRound);
-            setAverSize(AvSizeRound);
-            setTotNearObj(TotalNear);
-            setTodate(DateFull);
-
-
-            // var AllObjects = 0;
-            // for(let j = 0; j < data.length; j++) {
-            //     AllObjects += (data[j].estimated_diameter.meters.estimated_diameter_max + data[j].estimated_diameter.meters.estimated_diameter_max) / 2;
-            // }
-            // var Averagesize = AllObjects / data.length;
-})
-
-    }, []) //only run once
     
      return(
         <>
@@ -194,11 +194,11 @@ const Dash = () => {
             <Col className="col-4">
             <div className="PieChart">
             <h2 className="DashH2">5 Near Earth Objects Today in meters</h2>
-                <Pie />
+                <Pie data={Todate}/>
             </div>
             </Col>
             <Col className="LinePrew col-8">
-                <Line/>
+                <Line data={Todate}/>
             </Col>
 
         </Row>

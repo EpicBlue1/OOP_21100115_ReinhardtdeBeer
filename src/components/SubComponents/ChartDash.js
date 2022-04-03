@@ -12,27 +12,22 @@ import { useState, useEffect, useRef } from 'react';
 import AsGra from './AsteroidRadar';
 import Astobj from './AstroidObj';
 import {Link} from 'react-router-dom';
-
-
-
+import Dash from '../Dash'
 
 ChartJS.register(ArcElement, Tooltip, RadialLinearScale, PointElement, LineElement, Filler, Legend);
 
+const DashChart = (props) =>{
 
-
-
-const TopFive = () =>{
-
+    const [RadInfo, setRadInfo] = useState([]);
     const [RadData, setRadData] = useState([]);
 
     const RadarGr = [];
 
 
     useEffect(() => {
-        axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-07&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
+        axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=' + props.data + '&end_date=' + props.data + '&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
         .then((res) => {
-            const numText = '2015-09-07';
-            const data = res.data.near_earth_objects[numText];
+            const data = res.data.near_earth_objects[props.data];
             var textOne = 0;
             var textTwo = 0;
 
@@ -56,8 +51,6 @@ const TopFive = () =>{
             }
             var avgV = totalV / data.length;
 
-            console.log(avgV)
-
             var totalMD = 0;
             for(var i = 0; i < data.length; i++) {
                 textTwo = data[i].close_approach_data[0].miss_distance.kilometers;
@@ -65,10 +58,9 @@ const TopFive = () =>{
                 totalMD +=  numTwo;
             }
             var avgMD = totalMD / data.length;
-            console.log(data);
+            
 
-
-            for(let i = 0; i < 2; i++) {
+            for(let i = 0; i < 1; i++) {
                 let potentially = data[i].is_potentially_hazardous_asteroid;
                 let AssName = 'Object ' + [i] + ' ' + data[i].name;
 
@@ -91,9 +83,6 @@ const TopFive = () =>{
                 if(magMd > 100){
                     magMd = 100;
                 }
-
-                console.log(magMd)
-
 
                 RadarGr.push({
                     Number: i,
@@ -118,34 +107,30 @@ const TopFive = () =>{
 
     const [PieInfo, setPieInfo] = useState([]);
     const [DispData, setDispData] = useState([]);
+    // const [labels, setLabels] = useState([]);
 
     useEffect(() => {
-        axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-07&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
+        axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=' + props.data + '&end_date=' + props.data + '&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
         .then((res) => {
             const numText = '2015-09-07';
-            const data = res.data.near_earth_objects[numText];
+            const data = res.data.near_earth_objects[props.data];
+
+            // let AsOne = data[2015-09-07]
+            let AsOne = (data[0].estimated_diameter.meters.estimated_diameter_min + data[1].estimated_diameter.meters.estimated_diameter_max) *2;
+            let AsTwo = (data[1].estimated_diameter.meters.estimated_diameter_min + data[2].estimated_diameter.meters.estimated_diameter_max) *2;
+            let AsThree = (data[2].estimated_diameter.meters.estimated_diameter_min + data[3].estimated_diameter.meters.estimated_diameter_max) *2;
+            let AsFour = (data[3].estimated_diameter.meters.estimated_diameter_min + data[4].estimated_diameter.meters.estimated_diameter_max) *2;
+            let AsFive = (data[4].estimated_diameter.meters.estimated_diameter_min + data[5].estimated_diameter.meters.estimated_diameter_max) *2;
+
+            let AsOneName = 'Object ' + [0] + ' ' + data[1].name;
+            let AsTwoName = 'Object ' + [1] + ' ' + data[2].name;
+            let AsThreeName = 'Object ' + [2] + ' ' + data[3].name;
+            let AsFourName = 'Object ' + [3] + ' ' + data[4].name;
+            let AsFiveName = 'Object ' + [4] + ' ' + data[5].name;
 
 
-            const getLength = data.length;            
-
-            let AsOne = (data[2].estimated_diameter.meters.estimated_diameter_min + data[2].estimated_diameter.meters.estimated_diameter_max) *2;
-            let AsTwo = (data[3].estimated_diameter.meters.estimated_diameter_min + data[3].estimated_diameter.meters.estimated_diameter_max) *2;
-            // let AsThree = (data[5].estimated_diameter.meters.estimated_diameter_min + data[5].estimated_diameter.meters.estimated_diameter_max) *2;
-            // let AsFour = (data[6].estimated_diameter.meters.estimated_diameter_min + data[6].estimated_diameter.meters.estimated_diameter_max) *2;
-            // let AsFive = (data[7].estimated_diameter.meters.estimated_diameter_min + data[7].estimated_diameter.meters.estimated_diameter_max) *2;
-
-            let AsOneName = 'Object ' + [1] + ' ' + data[2].name;
-            let AsTwoName = 'Object ' + [2] + ' ' + data[3].name;
-            // let AsThreeName = 'Object ' + [3] + ' ' + data[5].name;
-            // let AsFourName = 'Object ' + [4] + ' ' + data[6].name;
-            // let AsFiveName = 'Object ' + [5] + ' ' + data[7].name;
-
-
-            console.log(data);
-
-
-            setPieInfo([AsOne, AsTwo]);
-            setDispData([AsOneName, AsTwoName]);
+            setPieInfo([AsOne, AsTwo, AsThree, AsFour, AsFive]);
+            setDispData([AsOneName, AsTwoName, AsThreeName, AsFourName, AsFiveName]);
 
 
         })
@@ -157,15 +142,36 @@ const TopFive = () =>{
 
     return(
     <>
-
-    <h2>Object Stats</h2>
-    {RadData}
-
-    </>
+                <Pie data = {{
+                labels: DispData,
+                datasets: [
+                {
+                label: '# of Votes',
+                data: PieInfo,
+                backgroundColor: [
+                    'rgba(152,198,240, 0.5)',
+                    'rgba(121,162,234, 0.5)',
+                    'rgba(85,118,234, 0.5)',
+                    'rgba(60,49,180, 0.5)',
+                    'rgba(41,23,101, 0.5)',
+                ],
+                borderColor: [
+                    'rgba(152,198,240, 1)',
+                    'rgba(121,162,234, 1)',
+                    'rgba(85,118,234, 1)',
+                    'rgba(60,49,180, 1)',
+                    'rgba(41,23,101, 1)',
+                ],
+                borderWidth: 1,
+                },
+            ],
+        }}
+                />
+</>
         
         
 
     )
 }
 
-export default TopFive;
+export default DashChart;
