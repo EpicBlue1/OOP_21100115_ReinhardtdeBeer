@@ -51,8 +51,6 @@ const AsGraphsOne = () =>{
             }
             var avgV = totalV / data.length;
 
-            console.log(avgV)
-
             var totalMD = 0;
             for(var i = 0; i < data.length; i++) {
                 textTwo = data[i].close_approach_data[0].miss_distance.kilometers;
@@ -85,9 +83,6 @@ const AsGraphsOne = () =>{
                 if(magMd > 100){
                     magMd = 100;
                 }
-
-                console.log(magMd)
-
 
                 RadarGr.push({
                     Number: i,
@@ -134,9 +129,6 @@ const AsGraphsOne = () =>{
             let AsThreeName = 'Object ' + [2] + ' ' + data[3].name;
             let AsFourName = 'Object ' + [3] + ' ' + data[4].name;
             let AsFiveName = 'Object ' + [4] + ' ' + data[5].name;
-
-
-            console.log(data);
 
 
             setPieInfo([AsOne, AsTwo, AsThree, AsFour, AsFive]);

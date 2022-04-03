@@ -3,19 +3,23 @@ import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Asgraph from './AstroidGraphs';
-import Timeline from './Timeline';
+import Timeline from './SubComponents/TimelineDash';
 import Astobj from './SubComponents/AstroidObj';
 import Dashboard from './Dash';
 import Pie from './SubComponents/AsGraph'
-import Line from './Timeline'
+import Line from './SubComponents/TimelineDash'
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import Header from './Header'
+import Header from './Header';
 
 
 const Dash = () => {
 
     const [DispData, setDispData] = useState([]);
+    const [TotNearObj, setTotNearObj] = useState([]);
+    const [AverSize, setAverSize] = useState([]);
+    const [AverMiss, setAverMiss] = useState([]);
+    const [Todate, setTodate] = useState([])
 
     const Radar = [];
 
@@ -31,7 +35,8 @@ const Dash = () => {
             for(let j = 0; j < data.length; j++) {
             AsterTot += (data[j].estimated_diameter.meters.estimated_diameter_max + data[j].estimated_diameter.meters.estimated_diameter_max) / 2;
             }
-                var Averagesize = AsterTot / data.length;
+            var Averagesize = AsterTot / data.length;
+
 
             for(let i = 1; i < 6; i++) {
                 AsterTot += (data[i].estimated_diameter.meters.estimated_diameter_max + data[i].estimated_diameter.meters.estimated_diameter_max) / 2;
@@ -92,14 +97,103 @@ const Dash = () => {
 })
 
     }, []) //only run once
+
+    useEffect(() => {
+        axios.get('https://api.nasa.gov/neo/rest/v1/feed?api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
+        .then((res) => {
+            let date = new Date();
+            let Day = date.getDate();
+            let DayText = Day.toString();
+
+            if(Day < 10){
+                Day = "0" + DayText;
+            }
+
+            let Month = (date.getMonth()+1);
+            let MonthText = Month.toString();
+            if(Month < 10){
+                Month = "0" + MonthText;
+            }
+
+            let Year = date.getFullYear();
+            let YearText = Year.toString();
+
+            let DateFull = YearText + "-" + Month + "-" + Day;
+            const data = res.data.near_earth_objects[DateFull];
+
+
+            var TotalNear = 0;
+            let AvSize = 0
+
+            for(let j = 0; j < data.length; j++) {
+                TotalNear += data.length;
+                AvSize += (data[j].estimated_diameter.meters.estimated_diameter_max + data[j].estimated_diameter.meters.estimated_diameter_max) / 2;
+            }
+            let AverageSize = AvSize / data.length;
+            let AvSizeRound = Math.round(AverageSize * 100) / 100 + "m";
+
+            let AvMiss = 0;
+            let AvMissText = "";
+
+            for(let j = 0; j < data.length; j++) {
+                AvMissText = data[j].close_approach_data[0].miss_distance.kilometers;
+                AvMiss += parseInt(AvMissText);
+
+            }
+            let AverageMiss = AvMiss / data.length;
+            let AvMissRound = Math.round(AverageMiss * 100) / 100 + "km";
+
+
+            console.log(TotalNear);
+
+            setAverMiss(AvMissRound);
+            setAverSize(AvSizeRound);
+            setTotNearObj(TotalNear);
+            setTodate(DateFull);
+
+
+            // var AllObjects = 0;
+            // for(let j = 0; j < data.length; j++) {
+            //     AllObjects += (data[j].estimated_diameter.meters.estimated_diameter_max + data[j].estimated_diameter.meters.estimated_diameter_max) / 2;
+            // }
+            // var Averagesize = AllObjects / data.length;
+})
+
+    }, []) //only run once
     
      return(
         <>
-        <Header/>
+        <Header data = {Todate}/>
         <Row className="ConDash">
+        
+
+            <Col className="col-12">
+            <Col className="col-4 float">
+            <div className="infoblock">
+                <h2>Total near earth objects today</h2>
+                <p className="Number">{TotNearObj}</p>
+            </div>
+            </Col>
+            <Col className="col-4 float">
+            <div className="infoblockOne">
+                <h2>Average miss dinstance to earth today</h2>
+                <p className="Number">{AverMiss}</p>
+            </div>
+            </Col>
+            <Col className="col-4 float">
+            <div className="infoblock">
+            <h2>Average asteroid size today</h2>
+            <p className="Number">{AverSize}</p>
+            </div>
+            </Col>
+
+            </Col>
+            <Col className="col-12 AsPrewCon">
+            {DispData}
+            </Col>
             <Col className="col-4">
             <div className="PieChart">
-            <h2 className="DashH2">5 Near Earth Objects 2015</h2>
+            <h2 className="DashH2">5 Near Earth Objects Today in meters</h2>
                 <Pie />
             </div>
             </Col>
@@ -107,31 +201,6 @@ const Dash = () => {
                 <Line/>
             </Col>
 
-            <Col className="col-12 AsPrewCon">
-            {DispData}
-            </Col>
-
-            <Col className="col-12">
-            <Col className="col-4 float">
-            <div className="infoblock">
-                <h2>Total near earth objects</h2>
-                <p className="Number">1300</p>
-            </div>
-            </Col>
-            <Col className="col-4 float">
-            <div className="infoblockOne">
-                <h2>Total potentially hazardous Objects</h2>
-                <p className="Number">1300</p>
-            </div>
-            </Col>
-            <Col className="col-4 float">
-            <div className="infoblock">
-            <h2>Average miss dinstance</h2>
-            <p className="Number">1300</p>
-            </div>
-            </Col>
-
-            </Col>
         </Row>
          </>
      )

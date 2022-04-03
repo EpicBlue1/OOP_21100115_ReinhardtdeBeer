@@ -29,10 +29,8 @@ const AstroidObject = (props) =>{
                     {
                     label,
                     data,
-                    backgroundColor: [
-                        'rgba(152,198,240, 0.5)'
-                    ],
-                    borderColor: 'rgba(152,198,240, 1)',
+                    backgroundColor: ['rgba(255, 102, 0, 0.5)'],
+                    borderColor: 'rgba(255, 102, 0, 1)',
                     borderWidth: 1,
                     },
                 ],

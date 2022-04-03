@@ -5,15 +5,16 @@ import Col from 'react-bootstrap/Col';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
+import Dash from './Dash'
 
 //navigation
-const Header = () =>{
+const Header = (props) =>{
 
 
     return(
         //fragment
-        <Row>
-            <Col className='col-2 head_section'><div className='dateDispStyle'><p className='dateDisp'>1 April 2022</p></div></Col>
+        <Row className='BackgroundImage'>
+            <Col className='col-2 head_section'><div className='dateDispStyle'><p className='dateDisp'>{props.data}</p></div></Col>
             <Col className='col-7 head_section'>
             <div className='Title'>
                 <h1>Welcome</h1>

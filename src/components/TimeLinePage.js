@@ -21,12 +21,17 @@ ChartJS.register(
 );
 
 //navigation
-const Timeline = () =>{
+const TimelinePage = () =>{
 
     const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
     return(
         //fragment
+        <>
+        <Row><h1 className="Heading">Timeline</h1></Row>
+        <Row><div className="Descript"><p>Lorem ipsum lor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.nt laborum</p></div></Row>
+        <Row>
+        <Col className="col-8 TimelineCol">
         <Line options = {{
         responsive: true,
         plugins: {
@@ -51,7 +56,12 @@ const Timeline = () =>{
         height = {800}
         width = {1200}
         />
+        </Col>
+    </Row>
+    </>
+        
+        
     )
 }
 
-export default Timeline;
+export default TimelinePage;

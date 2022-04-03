@@ -5,7 +5,8 @@ import {Link} from 'react-router-dom';
 
 const Optionbar = () => {
      return(
-        <Row><div className='whitebar'>
+        <Row>
+            <div className='whitebar'>
 
         <select className='dateSel'>
             <option>Choose Date</option>
@@ -18,7 +19,8 @@ const Optionbar = () => {
         
         <button className="btn btn-primary dateSelTwo"><Link to="/Timeline">Asteroid Timeline</Link></button>
     
-    </div></Row>
+        </div>
+    </Row>
      )
 }
 

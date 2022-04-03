@@ -28,12 +28,20 @@ const AstroidGraphs = () =>{
 
 
     return(
-    <Container fluid>
+    <>
         <Row><h1 className="Heading">Near Earth Objects 2015 September</h1></Row>
         <Row><div className="Descript"><p>Lorem ipsum lor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.nt laborum</p></div></Row>
         <Row>
         <Col>
             <div className="GraphOne">
+                <select className='dateSel'>
+                    <option>Choose Date</option>
+                    <option>Option One</option>
+                    <option>Option Two</option>
+                    <option>Option Three</option>
+                    <option>Option Four</option>
+                    <option>Option Five</option>
+                </select>
                 <AsteroidGraph/>
             </div>
         </Col>
@@ -44,7 +52,7 @@ const AstroidGraphs = () =>{
             </div>
         </Col>
         </Row>
-    </Container> 
+    </> 
 
     )
 }

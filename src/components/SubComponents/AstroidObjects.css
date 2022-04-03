@@ -28,8 +28,8 @@
 .AsGraph{
     width: 45%;
     float: left;
-    height: 400px;
-    background-color: #3b3b3b;
+    height: max-content;
+    background-color: #1b1b1b;
     border-radius: 10px !important;
     margin: 10px;
     padding: 20px;
@@ -52,7 +52,8 @@
 
 .Heading{
     text-align: center;
-    padding-top: 1%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     color: white;
 }
 
@@ -65,9 +66,13 @@
 .Descript{
     margin: 0 auto;
     padding: 20px !important;
-    width: 80% !important;
-    height: 20vh;
-    background-color: #3b3b3b85;
+    width: 95% !important;
+    height: 15vh;
+    margin-bottom: 2%;
     border-radius: 10px;
     color: #999;
+}
+
+.TimelineCol{
+    margin-bottom: 3% !important;
 }

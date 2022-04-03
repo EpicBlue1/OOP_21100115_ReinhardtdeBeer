@@ -2,15 +2,19 @@ import './index.css';
 import Header from "./components/Header";
 import {Route, Routes} from 'react-router-dom';
 import Asgraph from './components/AstroidGraphs';
-import Timeline from './components/Timeline';
+import Timeline from './components/TimeLinePage';
 import Dashboard from './components/Dash';
-import Navigation from './components/Nav'
+import Navigation from './components/Nav';
+import Container from 'react-bootstrap/Container';
+import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 function App() {
   return (
     <>
-      <div className="App">
+      <Container fluid className="App">
 
       <Navigation />
       
@@ -20,7 +24,7 @@ function App() {
       <Route path="/AstroidGraphs" element={<Asgraph />} ></Route>
       </Routes>
 
-    </div>
+    </Container>
     </>
   );
 }
