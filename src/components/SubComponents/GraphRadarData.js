@@ -66,7 +66,8 @@ const TopFive = () =>{
                 totalMD +=  numTwo;
             }
             var avgMD = totalMD / data.length;
-            
+            console.log(data);
+
 
             for(let i = 0; i < 5; i++) {
                 let potentially = data[i].is_potentially_hazardous_asteroid;
@@ -132,22 +133,22 @@ const TopFive = () =>{
 
             let AsOne = (data[2].estimated_diameter.meters.estimated_diameter_min + data[2].estimated_diameter.meters.estimated_diameter_max) *2;
             let AsTwo = (data[3].estimated_diameter.meters.estimated_diameter_min + data[3].estimated_diameter.meters.estimated_diameter_max) *2;
-            let AsThree = (data[5].estimated_diameter.meters.estimated_diameter_min + data[5].estimated_diameter.meters.estimated_diameter_max) *2;
-            let AsFour = (data[6].estimated_diameter.meters.estimated_diameter_min + data[6].estimated_diameter.meters.estimated_diameter_max) *2;
-            let AsFive = (data[7].estimated_diameter.meters.estimated_diameter_min + data[7].estimated_diameter.meters.estimated_diameter_max) *2;
+            // let AsThree = (data[5].estimated_diameter.meters.estimated_diameter_min + data[5].estimated_diameter.meters.estimated_diameter_max) *2;
+            // let AsFour = (data[6].estimated_diameter.meters.estimated_diameter_min + data[6].estimated_diameter.meters.estimated_diameter_max) *2;
+            // let AsFive = (data[7].estimated_diameter.meters.estimated_diameter_min + data[7].estimated_diameter.meters.estimated_diameter_max) *2;
 
             let AsOneName = 'Object ' + [1] + ' ' + data[2].name;
             let AsTwoName = 'Object ' + [2] + ' ' + data[3].name;
-            let AsThreeName = 'Object ' + [3] + ' ' + data[5].name;
-            let AsFourName = 'Object ' + [4] + ' ' + data[6].name;
-            let AsFiveName = 'Object ' + [5] + ' ' + data[7].name;
+            // let AsThreeName = 'Object ' + [3] + ' ' + data[5].name;
+            // let AsFourName = 'Object ' + [4] + ' ' + data[6].name;
+            // let AsFiveName = 'Object ' + [5] + ' ' + data[7].name;
 
 
             console.log(data);
 
 
-            setPieInfo([AsOne, AsTwo, AsThree, AsFour, AsFive]);
-            setDispData([AsOneName, AsTwoName, AsThreeName, AsFourName, AsFiveName]);
+            setPieInfo([AsOne, AsTwo]);
+            setDispData([AsOneName, AsTwoName]);
 
 
         })

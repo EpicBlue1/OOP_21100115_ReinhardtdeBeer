@@ -8,15 +8,10 @@
 
 .GraphTwo{
     margin: 0 auto;
-    width: 90% !important;
-    height: 94%;
-    background-color: #1b1b1b;
+    width: 90%;
+    height: 45%;
     margin-top: 5%;
     margin-bottom: 5%;
-    overflow-y: auto;
-    box-shadow: -5px 3px 5px 0px rgba(0,0,0,0.75);
--webkit-box-shadow: -5px 3px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: -5px 3px 5px 0px rgba(0,0,0,0.75);
 }
 
 .InfoCon{

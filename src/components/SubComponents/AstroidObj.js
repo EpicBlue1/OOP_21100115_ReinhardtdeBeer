@@ -20,11 +20,7 @@ const AstroidObject = (props) =>{
         <p>Velocity: {props.velocity}</p>
         <p>Potentially Hazardous: {props.PH}</p></div>
   </Popup>
-</div>     
-
-/* <div> 
-            
-        </div> */
+</div>
         
     )
 }

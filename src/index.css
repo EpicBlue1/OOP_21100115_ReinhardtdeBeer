@@ -13,6 +13,72 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.DateInPut{
+  width: 10%;
+  background-color: #1b1b1b;
+  border: none;
+  border-radius: 10px;
+  float: left;
+  margin-left: 2%;
+  margin-bottom: 5%;
+  height: 30px;
+  text-align: center;
+  color: white;
+}
+
+.DateSel{
+  float: right;
+  background-color: #1b1b1b;
+  width: 20%;
+  height: 30px;
+  padding-top: 0 !important;
+  margin-right: 10%;
+  background-color: rgba(255, 102, 0, 1)!important;
+  border: none !important;
+}
+
+.PropertySel{
+  padding-top: 3% !important;
+  float: right;
+  margin-top: 10%;
+  background-color: #1b1b1b;
+  width: 30%;
+  height: 35px;
+  padding-top: 0 !important;
+  margin-right: 10%;
+  background-color: #6076E5;
+  border: none !important;
+}
+
+.ObjSel{
+  width: 25%;
+  background-color: #1b1b1b;
+  border: none;
+  border-radius: 10px;
+  float: left;
+  margin-left: 2%;
+  margin-bottom: 5%;
+  height: 30px;
+  text-align: center;
+  color: white;
+}
+
+.SelectDate{
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 5%;
+}
+
+h4{
+  text-align: left !important;
+  height: 5vh;
+  padding-bottom: 2% !important;
+  font-size: 18px !important;
+  padding-left: 2%;
+  color: white !important;
+}
+
 /* .BackgroundImage{
   background-image: url('img/Slide\ 16_9\ -\ 1\ \(1\).png');
   background-position: center;

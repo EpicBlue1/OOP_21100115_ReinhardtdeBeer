@@ -57,6 +57,14 @@ const TimelinePage = () =>{
         width = {1200}
         />
         </Col>
+        <Col>
+        <h2>Select Property</h2>
+            <button className="btn btn-primary PropertySel">Size</button>
+            <button className="btn btn-primary PropertySel">MissDistance</button>
+            <button className="btn btn-primary PropertySel">Velocity</button>
+            <button className="btn btn-primary PropertySel">Magnitude</button>
+            <button className="btn btn-primary PropertySel">Total Objects</button> 
+        </Col>
     </Row>
     </>
         
