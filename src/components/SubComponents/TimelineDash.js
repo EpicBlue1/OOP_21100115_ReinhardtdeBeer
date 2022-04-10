@@ -45,7 +45,7 @@ const Timeline = (props) =>{
             for(var i = 0; i < data.length; i++){
                 let DateDat = data[i].close_approach_data[0].close_approach_date_full;
                 Dates.push({
-                    DateNum: parseInt(DateDat.substring(12)), Time: DateDat.substring(12), Size: (data[i].estimated_diameter.meters.estimated_diameter_min + data[0].estimated_diameter.meters.estimated_diameter_max) /2
+                    DateNum: parseInt(DateDat.substring(12)), Time: DateDat.substring(12), Size: (data[i].estimated_diameter.meters.estimated_diameter_min + data[i].estimated_diameter.meters.estimated_diameter_max) /2
                 })
             }
 

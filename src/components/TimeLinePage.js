@@ -23,7 +23,80 @@ ChartJS.register(
 //navigation
 const TimelinePage = () =>{
 
-    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    const [TomorrowDat, setTommorowDat] = useState([])
+
+    const linkVal = useRef("Size");
+
+    useEffect(() => {
+        axios.get('https://api.nasa.gov/neo/rest/v1/feed?api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
+        .then((res) => {
+
+            let date = new Date();
+
+            let Day = date.getDate() + 1;
+            let Month = (date.getMonth()+1);
+            let Year = date.getFullYear();
+
+            if(Day > 28){
+                Month = Month + 1;
+                Day = 1;
+            }
+            if(Month < 10){
+                Month = "0" + Month;
+            }
+            if(Day < 10){
+                Day = "0" + Day;
+            }
+
+            Day = Day.toString();
+            Month = Month.toString();
+            Year = Year.toString();
+
+            let DateFull = Year + "-" + Month + "-" + Day;
+            console.log(DateFull)
+            const data = res.data.near_earth_objects[DateFull];
+
+            console.log(data);
+
+            const Tomorrow = [];
+
+            for(let i = 0; i < data.length; i++){
+                let DateDat = data[i].close_approach_data[0].close_approach_date_full;
+                Tomorrow.push({
+                    Size: (data[i].estimated_diameter.meters.estimated_diameter_min + data[i].estimated_diameter.meters.estimated_diameter_max) /2,
+                    MissDistance: 0,
+                    MissDistanceLunar: 0,
+                    Velocity: 0,
+                    Magnitude: 0,
+                    TimeNum: parseInt(DateDat.substring(12)),
+                    Time: DateDat.substring(12)
+                })
+            }
+
+            const sortedTomorrow = Tomorrow.sort((b, a) => b.TimeNum - a.TimeNum);
+
+
+            setTommorowDat(sortedTomorrow);
+})
+
+    }, []) //only run once
+
+    console.log(TomorrowDat)
+
+    var data = "";
+
+    function updateProperties(){
+        let getValue = linkVal.current.value;
+        if(getValue === "Size"){
+        data =  TomorrowDat.map((o) => o.Size);
+          } else if(getValue === "MissDistance"){
+            Line.data.data = TomorrowDat.map((o) => o.Size);
+        } else if(getValue === ""){
+        data =  TomorrowDat.map((o) => o.MissDistance);
+          }
+        Line.update();
+        console.log(data);
+    }    
 
     return(
         //fragment
@@ -43,11 +116,11 @@ const TimelinePage = () =>{
         },
         }}
         data = {{
-            labels,
+            labels: TomorrowDat.map((o) => o.Time),
             datasets: [
             {
                 label: 'Launches Per Year',
-                data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+                data,
                 borderColor: 'rgba(255, 102, 0, 1)',
                 backgroundColor: 'rgba(255, 102, 0, 0.5)',
             }
@@ -59,11 +132,14 @@ const TimelinePage = () =>{
         </Col>
         <Col>
         <h2>Select Property</h2>
-            <button className="btn btn-primary PropertySel">Size</button>
-            <button className="btn btn-primary PropertySel">MissDistance</button>
-            <button className="btn btn-primary PropertySel">Velocity</button>
-            <button className="btn btn-primary PropertySel">Magnitude</button>
-            <button className="btn btn-primary PropertySel">Total Objects</button> 
+
+        <select  onChange={updateProperties} ref={linkVal}>
+            <option value="Size" className="btn btn-primary PropertySel">Size</option>
+            <option className="btn btn-primary PropertySel">MissDistance</option>
+            <option className="btn btn-primary PropertySel">Velocity</option>
+            <option className="btn btn-primary PropertySel">Magnitude</option>
+            <option className="btn btn-primary PropertySel">MissDistanceLunar</option>
+        </select>
         </Col>
     </Row>
     </>

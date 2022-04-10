@@ -36,7 +36,7 @@ const DashChart = (props) =>{
 
             for(var i = 0; i < 5; i++){
                 Sizes.push({
-                    Size: (data[i].estimated_diameter.meters.estimated_diameter_min + data[0].estimated_diameter.meters.estimated_diameter_max) /2, Name: 'Object ' + [i] + ' ' + data[i].name
+                    Size: (data[i].estimated_diameter.meters.estimated_diameter_min + data[i].estimated_diameter.meters.estimated_diameter_max) /2, Name: 'Object ' + [i] + ' ' + data[i].name
                 })
             }
 

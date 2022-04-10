@@ -32,26 +32,25 @@ const Dash = () => {
         .then((res) => {
 
             let date = new Date();
+
             let Day = date.getDate();
-            let DayText = Day.toString();
+            Day = Day.toString();
+            let Month = (date.getMonth()+1);
+            Month = Month.toString();
+            let Year = date.getFullYear();
+            Year = Year.toString();
 
             if(Day < 10){
-                Day = "0" + DayText;
+                Day = "0" + Day;
             }
 
-            let Month = (date.getMonth()+1);
-            let MonthText = Month.toString();
             if(Month < 10){
-                Month = "0" + MonthText;
+                Month = "0" + Month;
             }
-
-            let Year = date.getFullYear();
-            let YearText = Year.toString();
-
-            let DateFull = YearText + "-" + Month + "-" + Day;
+            
+            let DateFull = Year + "-" + Month + "-" + Day;
             const data = res.data.near_earth_objects[DateFull];
-
-
+            
             var TotalNear = 0;
             let AvSize = 0
 
@@ -98,14 +97,13 @@ const Dash = () => {
             var Averagesize = AsterTot / data.length;
 
 
-            for(let i = 0; i < 5
-                ; i++) {
-                AsterTot += (data[i].estimated_diameter.meters.estimated_diameter_max + data[i].estimated_diameter.meters.estimated_diameter_max) / 2;
+            for(let i = 0; i < 5; i++) {
+                    AsterTot += (data[i].estimated_diameter.meters.estimated_diameter_min + data[i].estimated_diameter.meters.estimated_diameter_max) / 2;
                     let AssName = 'Object ' + [i] + ' ' + data[i].name;
                     let potentially = data[i].is_potentially_hazardous_asteroid;
-                    let AsSize = (data[i].estimated_diameter.meters.estimated_diameter_max + data[i].estimated_diameter.meters.estimated_diameter_max) / 2;
+                    let AsSize = (data[i].estimated_diameter.meters.estimated_diameter_min + data[i].estimated_diameter.meters.estimated_diameter_max) /2;
 
-                    let AsPercent = (Averagesize / (data[i].estimated_diameter.meters.estimated_diameter_max + data[i].estimated_diameter.meters.estimated_diameter_max) / 2) * 100;
+                    let AsPercent = (Averagesize / (data[i].estimated_diameter.meters.estimated_diameter_min + data[i].estimated_diameter.meters.estimated_diameter_max) / 2) * 100;
                     if(AsPercent > 100){
                         AsPercent = 100;
                     }
