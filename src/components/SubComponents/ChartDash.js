@@ -20,7 +20,7 @@ const DashChart = (props) =>{
 
     const [RadData, setRadData] = useState([]);
     const RadarGr = [0];
-    const [PieInfo, setPieInfo] = useState(0);
+    const [PieInfo, setPieInfo] = useState([]);
     const [DispData, setDispData] = useState(0);
 
     //force update
@@ -30,18 +30,17 @@ const DashChart = (props) =>{
     useEffect(() => {
         axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=' + props.data + '&end_date=' + props.data + '&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
         .then((res) => {
-            const numText = '2015-09-07';
             const data = res.data.near_earth_objects[props.data];
 
-            const Sizes = []
+            const Sizes = [];
 
             for(var i = 0; i < 5; i++){
                 Sizes.push({
-                    Size: (data[i].estimated_diameter.meters.estimated_diameter_min + data[i].estimated_diameter.meters.estimated_diameter_max) *2, Name: 'Object ' + [i] + ' ' + data[i].name
+                    Size: (data[i].estimated_diameter.meters.estimated_diameter_min + data[0].estimated_diameter.meters.estimated_diameter_max) /2, Name: 'Object ' + [i] + ' ' + data[i].name
                 })
             }
 
-            console.log(Sizes)
+            console.log(Sizes);
 
 
             setPieInfo(Sizes);

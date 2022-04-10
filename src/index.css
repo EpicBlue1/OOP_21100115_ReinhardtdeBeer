@@ -412,9 +412,13 @@ h2{
 }
 
 .AsPrewCon{
-  height: 35vh;
+  height: 40vh;
   overflow-y: auto;
 }
+.HeadingThree{
+  height: 10vh;
+}
+
 
 .float{
   float: left;

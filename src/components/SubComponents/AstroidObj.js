@@ -11,7 +11,7 @@ const AstroidObject = (props) =>{
     return (
 
     <div className='AsConStyle'>
-    <h3>{props.name}</h3>
+    <h3 className='HeadingThree'>{props.name}</h3>
     <Popup trigger={<button><div ><img className="AsImg" src={props.pic}/></div>
         </button>} position="right center">
         <div>

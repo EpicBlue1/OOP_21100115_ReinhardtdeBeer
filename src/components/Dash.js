@@ -30,6 +30,7 @@ const Dash = () => {
     useEffect(() => {
         axios.get('https://api.nasa.gov/neo/rest/v1/feed?api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
         .then((res) => {
+
             let date = new Date();
             let Day = date.getDate();
             let DayText = Day.toString();
@@ -87,7 +88,6 @@ const Dash = () => {
     useEffect(() => {
         axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=' + Todate + '&end_date=' + Todate + '&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
         .then((res) => {
-            const numText = '2015-09-07';
             const data = res.data.near_earth_objects[Todate];
             console.log(data);
 
