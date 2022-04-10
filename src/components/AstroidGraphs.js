@@ -12,9 +12,9 @@ import { useState, useEffect, useRef } from 'react';
 import AsGra from './SubComponents/AsteroidRadar';
 import Astobj from './SubComponents/AstroidObj';
 import {Link} from 'react-router-dom';
-import AsteroidGraph from './SubComponents/AsGraph'
-import GraphRadars from './SubComponents/GraphRadarData'
-import BarChart from './SubComponents/bartChart'
+import AsteroidGraph from './SubComponents/AsGraph';
+import GraphRadars from './SubComponents/GraphRadarData';
+import BarChart from './SubComponents/bartChart';
 
 
 

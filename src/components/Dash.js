@@ -1,3 +1,4 @@
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
@@ -8,20 +9,23 @@ import Astobj from './SubComponents/AstroidObj';
 import Dashboard from './Dash';
 import Pie from './SubComponents/ChartDash'
 import Line from './SubComponents/TimelineDash'
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';
-import Header from './Header';
+import Header from './Header'
 
 
 const Dash = () => {
 
-    const [DispData, setDispData] = useState([]);
-    const [TotNearObj, setTotNearObj] = useState([]);
-    const [AverSize, setAverSize] = useState([]);
-    const [AverMiss, setAverMiss] = useState([]);
-    const [Todate, setTodate] = useState([])
-
+    const [DispData, setDispData] = useState('Loading..');
+    const [TotNearObj, setTotNearObj] = useState("Loading..");
+    const [AverSize, setAverSize] = useState("Loading..");
+    const [AverMiss, setAverMiss] = useState("Loading..");
+    const [Todate, setTodate] = useState('2015-09-07');
     const Radar = [];
+
+    //force update
+    const [, updateState] = React.useState();
+    const forceUpdate = React.useCallback(() => updateState({}), []);
 
     useEffect(() => {
         axios.get('https://api.nasa.gov/neo/rest/v1/feed?api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
@@ -75,13 +79,6 @@ const Dash = () => {
             setAverSize(AvSizeRound);
             setTotNearObj(TotalNear);
             setTodate(DateFull);
-
-
-            // var AllObjects = 0;
-            // for(let j = 0; j < data.length; j++) {
-            //     AllObjects += (data[j].estimated_diameter.meters.estimated_diameter_max + data[j].estimated_diameter.meters.estimated_diameter_max) / 2;
-            // }
-            // var Averagesize = AllObjects / data.length;
 })
 
     }, []) //only run once
@@ -101,7 +98,8 @@ const Dash = () => {
             var Averagesize = AsterTot / data.length;
 
 
-            for(let i = 1; i < 6; i++) {
+            for(let i = 0; i < 5
+                ; i++) {
                 AsterTot += (data[i].estimated_diameter.meters.estimated_diameter_max + data[i].estimated_diameter.meters.estimated_diameter_max) / 2;
                     let AssName = 'Object ' + [i] + ' ' + data[i].name;
                     let potentially = data[i].is_potentially_hazardous_asteroid;
@@ -137,8 +135,6 @@ const Dash = () => {
                         picture = GifOne;
                     }
 
-
-
                     Radar.push({
                         Number: i,
                         Name: AssName,
@@ -152,8 +148,6 @@ const Dash = () => {
                     })
                 
             }
-
-
 
             let startItem = Radar.map((item) => <Astobj pic={item.Picture} date={item.Date} num={item.Number} name={item.Name} PH={item.potentiallyHazardous} magnitude={item.Magnitude} velocity={item.Velocity} size={item.Size} MD={item.MissDistance}/>)
             setDispData(startItem);

@@ -10,17 +10,17 @@ import 'reactjs-popup/dist/index.css';
 const AstroidObject = (props) =>{
     return (
 
-<div className='AsConStyle'>
+    <div className='AsConStyle'>
     <h3>{props.name}</h3>
     <Popup trigger={<button><div ><img className="AsImg" src={props.pic}/></div>
-</button>} position="right center">
-    <div>
+        </button>} position="right center">
+        <div>
         <p>Size: {props.size}m</p>
         <p>Magnitude: {props.magnitude}</p>   
         <p>Velocity: {props.velocity}</p>
         <p>Potentially Hazardous: {props.PH}</p></div>
-  </Popup>
-</div>
+        </Popup>
+    </div>
         
     )
 }

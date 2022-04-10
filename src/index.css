@@ -46,7 +46,7 @@ body {
   height: 35px;
   padding-top: 0 !important;
   margin-right: 10%;
-  background-color: #6076E5;
+  background-color: #422D53;
   border: none !important;
 }
 
@@ -151,7 +151,7 @@ code {
   height: max-content;
   padding-top: 1%;
   padding-bottom: 1%;
-  background-color: #6076E5;
+  background-color: #422D53;
   box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.10);
 -webkit-box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.10);
 -moz-box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.10);
@@ -436,7 +436,7 @@ h3{
 
 .infoblock{
   width: 95% !important;
-  background-color: rgba(96, 118, 229, 0.75);
+  background-color: #422D53;
   border-radius: 10px !important;
   height: 25vh;
   margin-left: 3%;
@@ -446,7 +446,7 @@ h3{
 }
 
 .IconButton{
-  background-color: rgba(96, 118, 229, 0.75) !important;
+  background-color: #422D53 !important;
   border: none !important;
   height: 50px !important;
   padding-top: 0 !important;
@@ -472,10 +472,11 @@ h3{
 }
 
 .Number{
-  font-size: 64px !important;
+  font-size: 48px !important;
   font-weight: bold !important;
   text-align: center !important;
   color: #fff !important;
+  padding-top: 2%;
 }
 
 .butt button{

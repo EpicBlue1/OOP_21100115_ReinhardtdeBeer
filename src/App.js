@@ -6,9 +6,6 @@ import Timeline from './components/TimeLinePage';
 import Dashboard from './components/Dash';
 import Navigation from './components/Nav';
 import Container from 'react-bootstrap/Container';
-import Image from 'react-bootstrap/Image';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 
 function App() {

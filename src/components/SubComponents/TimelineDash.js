@@ -1,3 +1,4 @@
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
@@ -28,35 +29,45 @@ const Timeline = (props) =>{
     const [DispData, setDispData] = useState([]);
     // const [labels, setLabels] = useState([]);
 
+    //force update
+    const [, updateState] = React.useState();
+    const forceUpdate = React.useCallback(() => updateState({}), []);
+
     useEffect(() => {
         axios.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=' + props.data + '&end_date=' + props.data + '&api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
         .then((res) => {
-            const numText = '2015-09-07';
             const data = res.data.near_earth_objects[props.data];
+            console.log(data);
 
             // let AsOne = data[2015-09-07]
-            let AsOne = (data[0].estimated_diameter.meters.estimated_diameter_min + data[1].estimated_diameter.meters.estimated_diameter_max) *2;
-            let AsTwo = (data[1].estimated_diameter.meters.estimated_diameter_min + data[2].estimated_diameter.meters.estimated_diameter_max) *2;
-            let AsThree = (data[2].estimated_diameter.meters.estimated_diameter_min + data[3].estimated_diameter.meters.estimated_diameter_max) *2;
-            let AsFour = (data[3].estimated_diameter.meters.estimated_diameter_min + data[4].estimated_diameter.meters.estimated_diameter_max) *2;
-            let AsFive = (data[4].estimated_diameter.meters.estimated_diameter_min + data[5].estimated_diameter.meters.estimated_diameter_max) *2;
+            const Dates = []
 
-            let AsOneName = 'Object ' + [0] + ' ' + data[1].name;
-            let AsTwoName = 'Object ' + [1] + ' ' + data[2].name;
-            let AsThreeName = 'Object ' + [2] + ' ' + data[3].name;
-            let AsFourName = 'Object ' + [3] + ' ' + data[4].name;
-            let AsFiveName = 'Object ' + [4] + ' ' + data[5].name;
+            for(var i = 0; i < data.length; i++){
+                let DateDat = data[i].close_approach_data[0].close_approach_date_full;
+                Dates.push({
+                    DateNum: parseInt(DateDat.substring(12)), Time: DateDat.substring(12), Size: (data[i].estimated_diameter.meters.estimated_diameter_max + data[0].estimated_diameter.meters.estimated_diameter_max) *2
+                })
+            }
 
-
-            setTimeLineInfo([AsOne, AsTwo, AsThree, AsFour, AsFive]);
-            setDispData([AsOneName, AsTwoName, AsThreeName, AsFourName, AsFiveName]);
+            const sortedDates = Dates.sort((b, a) => b.DateNum - a.DateNum);
 
 
+            // let DateTwoName = 'Object ' + [1] + ' ' + data[2].name;
+            // let DateThreeName = 'Object ' + [2] + ' ' + data[3].name;
+            // let DateFourName = 'Object ' + [3] + ' ' + data[4].name;
+            // let DateFiveName = 'Object ' + [4] + ' ' + data[5].name;
+
+
+            setTimeLineInfo(sortedDates);
+            // setDispData([DateOneName, DateTwoName, DateThreeName, DateFourName, DateFiveName]);
         })
 
     }, []) //only run once
 
-    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    console.log(TimeLineInfo)
+
+
+    let labels = TimeLineInfo;
 
     return(
         //fragment
@@ -66,16 +77,16 @@ const Timeline = (props) =>{
             legend: {
             },
             title: {
-            display: true,
+            display: false,
         },
         },
         }}
         data = {{
-            labels,
+            labels: labels.map((o) => o.Time),
             datasets: [
             {
-                label: 'Launches Per Year',
-                data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+                label: '5 Near Object Sizes By Time In Meters Today',
+                data: labels.map((o) => o.Size),
                 borderColor: 'rgba(255, 102, 0, 1)',
                 backgroundColor: 'rgba(255, 102, 0, 0.5)',
             }
