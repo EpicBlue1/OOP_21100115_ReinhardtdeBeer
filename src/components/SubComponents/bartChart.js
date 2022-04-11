@@ -1,22 +1,29 @@
-import Container from 'react-bootstrap/Container';
-import Image from 'react-bootstrap/Image';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 import './AstroidObjects.css';
 import React from 'react';
 import {Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend,} from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
-import axios from 'axios';
-import { useState, useEffect, useRef } from 'react';
+import AsGraph from '../AstroidGraphs';
+
 
 ChartJS.register(CategoryScale,LinearScale,BarElement,Title,Tooltip,Legend);
 
-const barChart = () =>{
+const barChart = (props) =>{
 
+  if(props.data === undefined){
+    return(
+        <div className="Loading">Loading...</div>
+    )
+}
+const labels = ['Size'];
 
-    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+console.log(props.data)
+  let TwoObjects = props.data
+  const firstHalf = TwoObjects.slice(0, 1)
+  const secondHalf = TwoObjects.slice(-1)
 
+  console.log(firstHalf);
 
     return(
     <>
@@ -40,18 +47,18 @@ const barChart = () =>{
                 labels,
                 datasets: [
                   {
-                    label: 'Dataset 1',
-                    data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+                    label: firstHalf.map((o) => o.Name),
+                    data: firstHalf.map((o) => o.Size),
                     borderColor: 'rgba(181, 156, 201, 1)',
                     backgroundColor: 'rgba(181, 156, 201, 0.75)'
 
                   },
                   {
-                    label: 'Dataset 2',
-                    data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+                    label: secondHalf.map((o) => o.Name),
+                    data: secondHalf.map((o) => o.Size),
                     borderColor: 'rgba(131, 90, 165, 1)',
                     backgroundColor: 'rgba(131, 90, 165, 0.75)',
-                  },
+                  }
                 ],
               }}
         />

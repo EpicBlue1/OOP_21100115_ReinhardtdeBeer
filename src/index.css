@@ -13,6 +13,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.Radars{
+  height: 50vh;
+  width: 100%;
+  overflow-y: auto;
+}
+
 .DateInPut{
   width: 10%;
   background-color: #1b1b1b;
@@ -51,7 +57,7 @@ body {
 }
 
 .ObjSel{
-  width: 25%;
+  width: 40%;
   background-color: #1b1b1b;
   border: none;
   border-radius: 10px;
