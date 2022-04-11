@@ -156,7 +156,6 @@ const TopFive = () =>{
 
     <h2>Object Stats</h2>
     {RadData}
-
     </>
         
         

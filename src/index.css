@@ -156,16 +156,6 @@ code {
 -webkit-box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.10);
 -moz-box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.10);
 }
-
-.ConDash{
-  width: 98.5% !important;
-  margin: 0 auto !important;
-  padding-top: 2% !important;
-  border-radius: 10px !important;
-  width: 98.5% !important;
-  height: 80vh;
-  padding-bottom: 1%;
-}
 .AsConStyle button{
   background-color: #090B0F;
   border-radius:10px !important;
@@ -419,11 +409,6 @@ h2{
   height: 10vh;
 }
 
-
-.float{
-  float: left;
-}
-
 .AsConStyle{
   padding: 3%;
   border-radius: 10px;
@@ -438,49 +423,11 @@ h3{
   color: white;
 }
 
-.infoblock{
-  width: 95% !important;
-  background-color: #422D53;
-  border-radius: 10px !important;
-  height: 25vh;
-  margin-left: 3%;
-  margin-right: 50% !important;
-  margin-bottom: 10%;
-  margin-top: 5%;
-}
-
 .IconButton{
   background-color: #422D53 !important;
   border: none !important;
   height: 50px !important;
   padding-top: 0 !important;
-}
-
-.infoblockOne{
-  width: 95% !important;
-  background-color: rgba(255, 102, 0, 0.75);
-  border-radius: 10px !important;
-  height: 25vh;
-  margin-left: 3%;
-  margin-right: 50% !important;
-  margin-bottom: 10%;
-  margin-top: 5%;
-}
-
-.infoblock h2{
-  font-size: 18px !important;
-}
-
-.infoblockOne h2{
-  font-size: 18px !important;
-}
-
-.Number{
-  font-size: 48px !important;
-  font-weight: bold !important;
-  text-align: center !important;
-  color: #fff !important;
-  padding-top: 2%;
 }
 
 .butt button{

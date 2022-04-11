@@ -9,6 +9,7 @@ import { useState, useEffect, useRef } from 'react';
 import {Chart as ChartJS,CategoryScale,LinearScale,PointElement,LineElement,Title,Tooltip,Legend,} from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
+import './timeline.css';
 
 ChartJS.register(
     CategoryScale,
@@ -23,9 +24,16 @@ ChartJS.register(
 //navigation
 const TimelinePage = () =>{
 
-    const [TomorrowDat, setTommorowDat] = useState([])
+    const [TomorrowDat, setTommorowDat] = useState([]);
+    const [LineData, setLineData] = useState();
+    const [LabelInfo, setLabelInfo ] = useState()
+    const [SelDesc, setSelDesc] = useState("Loading... Wait for this to change before you can make a selection");
 
-    const linkVal = useRef("Size");
+    const selVal = useRef("Size");
+
+    let lineProp = TomorrowDat.map((o) => o.Size);
+    let labelData = "Loading...";
+    let Description = "Choose an Option Above";
 
     useEffect(() => {
         axios.get('https://api.nasa.gov/neo/rest/v1/feed?api_key=ticABPFxovr6S00wWgZ4d5bIGibe5WHeAZOsr9aC')
@@ -33,7 +41,7 @@ const TimelinePage = () =>{
 
             let date = new Date();
 
-            let Day = date.getDate() + 1;
+            let Day = date.getDate() + 1; //tomorrows date
             let Month = (date.getMonth()+1);
             let Year = date.getFullYear();
 
@@ -64,10 +72,10 @@ const TimelinePage = () =>{
                 let DateDat = data[i].close_approach_data[0].close_approach_date_full;
                 Tomorrow.push({
                     Size: (data[i].estimated_diameter.meters.estimated_diameter_min + data[i].estimated_diameter.meters.estimated_diameter_max) /2,
-                    MissDistance: 0,
-                    MissDistanceLunar: 0,
-                    Velocity: 0,
-                    Magnitude: 0,
+                    MissDistance: data[i].close_approach_data[0].miss_distance.kilometers,
+                    MissDistanceLunar: data[i].close_approach_data[0].miss_distance.lunar,
+                    Velocity: data[i].close_approach_data[0].relative_velocity.kilometers_per_hour,
+                    Magnitude: data[i].absolute_magnitude_h,
                     TimeNum: parseInt(DateDat.substring(12)),
                     Time: DateDat.substring(12)
                 })
@@ -77,26 +85,51 @@ const TimelinePage = () =>{
 
 
             setTommorowDat(sortedTomorrow);
+
+            if(TomorrowDat.length === 0) {
+                console.log("Not Loaded yet");
+                Description = "You can make a selection";
+                setSelDesc(Description);
+    
+            } else {
+                console.log("All good");
+                setSelDesc(Description);
+            } //check if data has been loaded yet.
 })
 
     }, []) //only run once
 
-    console.log(TomorrowDat)
+    // console.log(TomorrowDat)
 
-    var data = "";
+    const updateProperties = () => {
+        let selection = selVal.current.value;
+        console.log(selection);
+        if (selection === 'MissDistance'){
+            lineProp =  TomorrowDat.map((o) => o.MissDistance);
+            labelData = "Tomorrows predicted Miss Distances in Km";
+            Description = "MissDistance...";
+        } else if (selection === 'Size'){
+            lineProp =  TomorrowDat.map((o) => o.Size);
+            labelData = "Tomorrows predicted Asteroid Sizes in m";
+            Description = "Size...";
+        } else if (selection === 'Velocity') {
+            lineProp =  TomorrowDat.map((o) => o.Velocity);
+            labelData = "Tomorrows predicted velocities Km/h";
+            Description = "Velocity...";
+        } else if (selection === 'Magnitude') {
+            lineProp =  TomorrowDat.map((o) => o.Magnitude);
+            labelData = "Tomorrows predicted Magnitude";
+            Description = "Magnitude...";
+        } else if (selection === 'MissDistanceLunar') {
+            lineProp =  TomorrowDat.map((o) => o.MissDistanceLunar);
+            labelData = "Tomorrows predicted Miss Distance in Lunar";
+            Description = "MissDistanceLunar...";
+        }
 
-    function updateProperties(){
-        let getValue = linkVal.current.value;
-        if(getValue === "Size"){
-        data =  TomorrowDat.map((o) => o.Size);
-          } else if(getValue === "MissDistance"){
-            Line.data.data = TomorrowDat.map((o) => o.Size);
-        } else if(getValue === ""){
-        data =  TomorrowDat.map((o) => o.MissDistance);
-          }
-        Line.update();
-        console.log(data);
-    }    
+        setLineData(lineProp);
+        setLabelInfo(labelData);
+        setSelDesc(Description);
+    }
 
     return(
         //fragment
@@ -119,8 +152,8 @@ const TimelinePage = () =>{
             labels: TomorrowDat.map((o) => o.Time),
             datasets: [
             {
-                label: 'Launches Per Year',
-                data,
+                label: LabelInfo,
+                data: LineData,
                 borderColor: 'rgba(255, 102, 0, 1)',
                 backgroundColor: 'rgba(255, 102, 0, 0.5)',
             }
@@ -130,16 +163,19 @@ const TimelinePage = () =>{
         width = {1200}
         />
         </Col>
-        <Col>
+        <Col className="col-4">
         <h2>Select Property</h2>
 
-        <select  onChange={updateProperties} ref={linkVal}>
-            <option value="Size" className="btn btn-primary PropertySel">Size</option>
-            <option className="btn btn-primary PropertySel">MissDistance</option>
-            <option className="btn btn-primary PropertySel">Velocity</option>
-            <option className="btn btn-primary PropertySel">Magnitude</option>
-            <option className="btn btn-primary PropertySel">MissDistanceLunar</option>
+        <select className='ObjDrop' onChange={updateProperties} ref={selVal}>
+            <option value="Size">Size</option>
+            <option value="MissDistance">Miss Distance</option>
+            <option value="Velocity">Velocity</option>
+            <option value="Magnitude">Magnitude</option>
+            <option value="MissDistanceLunar">MissDistanceLunar</option>
         </select>
+        <div className="descriptionArea">
+            {SelDesc}
+        </div>
         </Col>
     </Row>
     </>

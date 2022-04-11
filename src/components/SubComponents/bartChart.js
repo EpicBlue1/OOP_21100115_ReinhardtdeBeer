@@ -42,14 +42,15 @@ const barChart = () =>{
                   {
                     label: 'Dataset 1',
                     data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-                    borderColor: 'rgb(255, 99, 132)',
-                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    borderColor: 'rgba(181, 156, 201, 1)',
+                    backgroundColor: 'rgba(181, 156, 201, 0.75)'
+
                   },
                   {
                     label: 'Dataset 2',
                     data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-                    borderColor: 'rgb(53, 162, 235)',
-                    backgroundColor: 'rgba(53, 162, 235, 0.5)',
+                    borderColor: 'rgba(131, 90, 165, 1)',
+                    backgroundColor: 'rgba(131, 90, 165, 0.75)',
                   },
                 ],
               }}

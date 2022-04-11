@@ -11,7 +11,8 @@ import Pie from './SubComponents/ChartDash'
 import Line from './SubComponents/TimelineDash'
 import { useState, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';
-import Header from './Header'
+import Header from './Header';
+import './Dash.css';
 
 
 const Dash = () => {
@@ -157,8 +158,6 @@ const Dash = () => {
         <>
         <Header data = {Todate}/>
         <Row className="ConDash">
-        
-
             <Col className="col-12">
             <Col className="col-4 float">
             <div className="infoblock">

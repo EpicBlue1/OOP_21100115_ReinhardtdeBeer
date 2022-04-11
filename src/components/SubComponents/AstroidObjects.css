@@ -45,29 +45,8 @@
     padding-left: 9vh;
 }
 
-.Heading{
-    text-align: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    color: white;
-}
-
 .Buttons{
     padding-top: 1%;
     width: max-content!important;
     margin: 0 auto !important;
-}
-
-.Descript{
-    margin: 0 auto;
-    padding: 20px !important;
-    width: 95% !important;
-    height: 15vh;
-    margin-bottom: 2%;
-    border-radius: 10px;
-    color: #999;
-}
-
-.TimelineCol{
-    margin-bottom: 3% !important;
 }
