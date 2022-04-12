@@ -187,12 +187,8 @@ const AstroidGraphs = () =>{
             let InfoOne = CompareDatasetOne[ObjValOne];
             let InfoTwo = CompareDatasetOne[ObjValTwo];
 
-            let RadOne = RadarGr[ObjValOne];
-            let RadTwo = RadarGr[ObjValTwo];
 
             setObjectOneIfo([InfoOne, InfoTwo]);
-            setRad([RadOne]);
-            setRadTwo([RadTwo]);
             setPieInfo(CompareDatasetOne);
             console.log(Rad)
 
@@ -206,12 +202,12 @@ const AstroidGraphs = () =>{
     return(
     <>
         <Row><h1 className="Heading">Near Earth Objects 2015 September</h1></Row>
-        <Row><div className="Descript"><p>Lorem ipsum lor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.nt laborum</p></div></Row>
+        <Row><div className="Description"><p>Welcome to the comparison page. Choose any date from this week to compare the sizes of near-Earth objects using a bar graph and a pie chart. A summary of all objects on the selected date is provided, including their MissDistance, Size, Magnitude, and Velocity.</p></div></Row>
         <Row>
         <Col>
             <div className="GraphOne">
                 <div className="SelectDate">
-                 <h4>Dates to compare</h4>
+                 <h4>Select a date to compare objects</h4>
 
                 <select className="ObjSel" onChange={FirstDate} ref={FirstVal}>
                 <option>{DropdownDefault}</option>
@@ -231,12 +227,13 @@ const AstroidGraphs = () =>{
                 </div>
                 
                 <AsGraph data={ObjectOneIfo}/>
+                <div className="Description"><br></br><p>Sizes of two Asteroids shown and compared on Pie Chart</p></div>
             </div>
         </Col>
 
         <Col>
             <div className="GraphTwo">
-            <h2>Object Stats</h2>
+            <h2>Object Stats {DateSelOne}</h2>
             <div className="Radars">
             {RadData}
             </div>
@@ -245,6 +242,7 @@ const AstroidGraphs = () =>{
             </div>
             <div className="GraphTwo">
                 <BarChart data={ObjectOneIfo}/>
+                <div className="Description"><br></br><p>Sizes of two Asteroids shown and compared on Bar Chart</p></div>
             </div>
         </Col>
         </Row>

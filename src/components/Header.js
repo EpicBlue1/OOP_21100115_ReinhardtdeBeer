@@ -18,7 +18,7 @@ const Header = (props) =>{
             <Col className='col-7 head_section'>
             <div className='Title'>
                 <h1>Welcome</h1>
-                <p className='Description'>Lorem ipsum lor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.nt laborum</p>
+                <p className='Description'>Welcome to NEO. Near-Earth Objects, with a focus on the current week. Asteroids, also known as near-Earth objects, circle and pass us every day. This Web-App monitors and compares probable orbits around the Earth.</p>
             </div>
             </Col>
             <Col className='col-3 head_section'>

@@ -180,6 +180,7 @@ const Dash = () => {
 
             </Col>
             <Col className="col-12 AsPrewCon">
+                <div className="Header"><h2>Visualization of 5 asteroids today</h2></div>
             {DispData}
             </Col>
             <Col className="col-4">

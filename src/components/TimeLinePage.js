@@ -107,23 +107,23 @@ const TimelinePage = () =>{
         if (selection === 'MissDistance'){
             lineProp =  TomorrowDat.map((o) => o.MissDistance);
             labelData = "Tomorrows predicted Miss Distances in Km";
-            Description = "MissDistance...";
+            Description = "The Miss Distances are represented in km. Each point on the graph represents a particular asteroid and its corresponding Miss Distance towards earth for that timestamp.";
         } else if (selection === 'Size'){
             lineProp =  TomorrowDat.map((o) => o.Size);
             labelData = "Tomorrows predicted Asteroid Sizes in m";
-            Description = "Size...";
+            Description = "The Asteroid sizes are represented in meters. Each point on the graph represents a particular asteroid and its corresponding Size for that timestamp.";
         } else if (selection === 'Velocity') {
             lineProp =  TomorrowDat.map((o) => o.Velocity);
             labelData = "Tomorrows predicted velocities Km/h";
-            Description = "Velocity...";
+            Description = "The Asteroid velocity are represented in Km/h. Velocity is defined as the speed of an object in a certain direction. Each point on the graph represents a particular asteroid and its corresponding Size for that timestamp.";
         } else if (selection === 'Magnitude') {
             lineProp =  TomorrowDat.map((o) => o.Magnitude);
             labelData = "Tomorrows predicted Magnitude";
-            Description = "Magnitude...";
+            Description = "The Asteroids magnitude. Magnitude expresses the size or scope of something. In general, magnitude in physics refers to distance or amount. Each point on the graph represents a particular asteroid and its corresponding magnitude for that timestamp.";
         } else if (selection === 'MissDistanceLunar') {
             lineProp =  TomorrowDat.map((o) => o.MissDistanceLunar);
             labelData = "Tomorrows predicted Miss Distance in Lunar";
-            Description = "MissDistanceLunar...";
+            Description = "Miss Distance in Lunar. Lunar distance is approximately 400,000km, 1.28 light-seconds, or thirty times Earth's diameter. Each point on the graph displays a different asteroid and their respected Miss Distance in Lunar.";
         }
 
         setLineData(lineProp);
@@ -135,7 +135,7 @@ const TimelinePage = () =>{
         //fragment
         <>
         <Row><h1 className="Heading">Timeline</h1></Row>
-        <Row><div className="Descript"><p>Lorem ipsum lor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.nt laborum</p></div></Row>
+        <Row><div className="Description"><p>Welcome to the near earth objects Timeline of tomorrow. Given in timestamps of predicted orbits and misses. Choose a property from the dropdown to to display Size, Velocity, Miss Distance, Miss Distance in Lunar or Magnitude on the timeline</p></div></Row>
         <Row>
         <Col className="col-8 TimelineCol">
         <Line options = {{

@@ -15,7 +15,7 @@ const Nav = () =>{
         <Row>
             <div className='navStyling'>
                 <div className='navbarImg'></div>
-                <div className='navbTex'><p className='orange'>N</p><p>EO</p></div>
+                <div className='navbTex'><p>EO</p></div>
                 <div className='Icons'>
                     <button className="btn btn-primary IconButton"><Link to="/"><div className='IconOne'></div></Link></button>
                     <button className="btn btn-primary IconButton"><Link to="/AstroidGraphs"><div className='IconTwo'></div></Link></button>

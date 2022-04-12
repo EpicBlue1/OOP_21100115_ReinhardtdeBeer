@@ -41,12 +41,16 @@
 
   .infoblock{
     width: 95% !important;
-    background-color: #422D53;
+    background-color: rgba(66, 45, 83, 0.75);
     border-radius: 10px !important;
     height: 25vh;
     margin-left: 3%;
     margin-right: 50% !important;
     margin-bottom: 5%;
     margin-top: 5%;
+  }
+
+  .Header h2{
+    height: 10vh;
   }
   

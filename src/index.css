@@ -204,17 +204,22 @@ code {
 }
 
 .navbarImg{
-  margin-right: 20px;
+  margin-right: 5px;
   width: 50px;
   height: 50px;
-  /* background-image: url('img/PUKCOL.png'); */
-  background-color: white;
+  background-image: url('img/dashboard2_png.png');
+  background-size: 55% !important;
+  background-position: center !important;
   background-size: cover;
+  background-repeat: no-repeat !important;
+  background-color: white;
   border-radius: 150px;
   float: left;
 }
 
 .navbTex{
+  font-style: italic !important;
+  font-weight: 600;
   margin-right: 20px;
   width: 65px;
   height: 50px;
@@ -268,13 +273,12 @@ code {
   }
 }
 
-.Description p{
+p .Description{
   color: white !important;
   padding-top: 5vh;
   padding-left: 5vh;
   width: 100% !important;
-  overflow-y: scroll;
-  height: 35vh;
+  font-size: 28px !important;
 }
 
 .foto{
@@ -341,9 +345,11 @@ h2{
 }
 
 
-.Title p{
+.Description p{
+  margin: 0 auto !important;
+  width: 90%;
   color: white !important;
-  font-size: 12px !important;
+  font-size: 18px !important;
   font-weight: 200 !important;
 }
 
@@ -408,7 +414,7 @@ h2{
 }
 
 .AsPrewCon{
-  height: 40vh;
+  height: 55vh;
   overflow-y: auto;
 }
 .HeadingThree{
