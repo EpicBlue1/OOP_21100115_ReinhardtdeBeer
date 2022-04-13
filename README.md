@@ -16,11 +16,11 @@
 </br>
 <p align="center">
 
-  <a href="https://github.com/MikeMaynard14/termoneexample">
-    <img src="src/assets/mascot.svg" alt="Logo" width="140" height="140">
+  <a href="https://github.com/EpicBlue1/OOP_21100115_ReinhardtdeBeer">
+    <img src="src\img\dashboard2_png.png" alt="Logo" width="140" height="140">
   </a>
   
-  <h3 align="center">OpenSpace</h3>
+  <h3 align="center">NEO</h3>
 
   <p align="center">
     A web app made with react using a Nasa Near Earth Object Api to visualize data using charts js <br>
@@ -66,13 +66,15 @@
 
 ### Project Description
 
-A nice introduction to this amazing project of mine.
+Welcome to NEO. Near-Earth Objects, with a focus on the current week. Asteroids, also known as near-Earth objects, circle and pass us every day. This Web-App monitors and compares probable orbits around the Earth.
 
 ### Built With
 
 * [React](https://reactjs.org/)
-* [Technology Name](path/to/technology/website)
-* [Technology Name](path/to/technology/website)
+* [ChartJs](https://react-chartjs-2.netlify.app/)
+* [Axios](https://www.npmjs.com/package/axios)
+* [ReactRouterDom](https://reactrouter.com/)
+
 
 <!-- GETTING STARTED -->
 <!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
@@ -95,7 +97,7 @@ Enter `https://github.com/EpicBlue1/OOP_21100115_ReinhardtdeBeer.git` into the U
 2. Clone Repository </br>
 Run the following in the command-line to clone the project:
    ```sh
-   git clone https://github.com/MikeMaynard14/termoneexample.git
+   git clone https://github.com/EpicBlue1/OOP_21100115_ReinhardtdeBeer.git
    ```
     Open `Software` and select `File | Open...` from the menu. Select cloned directory and press `Open` button
 
@@ -107,13 +109,12 @@ Run the following in the command-line to install all the required dependencies:
 
 4. An API key is not required
 
-
 <!-- FEATURES AND FUNCTIONALITY-->
 <!-- You can add the links to all of your imagery at the bottom of the file as references -->
 ## Features and Functionality
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
-![image2](https://raw.githubusercontent.com/MikeMaynard14/termoneexample/main/src/assets/mockup.jpg)
+![image2](src/img/MockupDisp.jpg)
 
 ### NASA Near Earth Objects 
 
@@ -151,17 +152,18 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 ### Ideation
 
-![image5][image5]
+[Pinterest Board For Concept](https://za.pinterest.com/debeer0072/development-year-2-term-1/) 
 <br>
-![image6][image6]
+
+[Pinterest Board For Branded Component](https://za.pinterest.com/debeer0072/branded-component-dev-term-1/)  
 
 ### Wireframes
 
-![image7][image7]
+![image7](src/img/Wireframes.png)
 
 ### Custom UI
 
-![image8][image8]
+![image8](src/img/InteractableGlobe.png)
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
@@ -173,10 +175,10 @@ The `Development Process` is the technical implementations and functionality don
 <!-- This is your time to shine, explain the technical nuances of your project, how did you achieve the final outcome!-->
 
 * Utilized React `Charts.JS` dependency for Data visualization
+* Utilized React `<Model-Viewer>` dependency for 3D interactable globe
+* Utilized React `Sxios` dependency to make api calls
 * Implemented Routing with `React-Router v6`.
-* API End Point: link Here 
-* `Plugin` for this.
-* ETC.
+* API End Point: https://api.nasa.gov/#browseAPI 
 
 #### Highlights
 <!-- stipulated the highlight you experienced with the project -->
