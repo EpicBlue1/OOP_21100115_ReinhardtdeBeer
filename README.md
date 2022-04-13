@@ -119,17 +119,27 @@ Run the following in the command-line to install all the required dependencies:
 
 Used a near earth objects dataset and utilizing todays predicted data and the coming week to visualize and compare asteroid using react components to built and charts js to visualize.
 
-![image3][image3]
+![image3](src/img/TopHeadingpng.png)
 ### Feature 2
 
-Description of Feature
+An interactable 3D globe on the Dashboard
 
-![image4][image4]
+![image4](src/img/InteractableGlobe.png)
 ### Feature 3
 
-Description of Feature
+Asteroid Previews representing their size
 
-![image5][image5]
+![image5](src/img/Asteroid%20Previews.png)
+### Feature 4
+
+Compare page. Select a upcomming date and compare predicted sizes
+
+![image6](src/img/ComparDate.png)
+### Feature 5
+
+Display in timestamps the predicted Miss Distance, Miss Distance in Lunar, Size, Velocity or Magnitude on a Timeline.
+
+![image7](src/img/TimeLineShow.png)
 
 
 <!-- CONCEPT PROCESS -->
@@ -234,15 +244,17 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- LICENSE -->
 ## Contact
 
-* **Reinhardt de Beer** - [21100115@virtualwindow.co.za](mailto:21100115@virtualwindow.co.za) - [@rdb_rendereier](https://www.instagram.com/instagram_handle/) 
+* **Reinhardt de Beer** - [21100115@virtualwindow.co.za](mailto:21100115@virtualwindow.co.za) - [@rdb_fotopatat](https://www.instagram.com/rdb_fotopatat/) 
 * **Project Link** - https://github.com/EpicBlue1/OOP_21100115_ReinhardtdeBeer
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 <!-- all resources that you used and Acknowledgements here -->
-* [Nasa Api](path/to/resource)
-* [React](path/to/resource)
-* [ChartJs]](path/to/resource)
-* [Model Viewer](path/to/resource)
+* [Nasa Api](https://api.nasa.gov/#browseAPI)
+* [React](https://reactjs.org/)
+* [ChartJs](https://react-chartjs-2.netlify.app/)
+* [Model Viewer](https://modelviewer.dev/docs/)
+* [React Bootstrap](https://react-bootstrap.github.io/)
+
 
 
