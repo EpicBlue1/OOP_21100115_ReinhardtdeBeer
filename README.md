@@ -115,9 +115,9 @@ Run the following in the command-line to install all the required dependencies:
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
 ![image2](https://raw.githubusercontent.com/MikeMaynard14/termoneexample/main/src/assets/mockup.jpg)
 
-### All The Latest Space X Data! 
+### NASA Near Earth Objects 
 
-Usding the Space X API, we have collected and collated all the most relevant Space X data into once seemless react experience!
+Used a near earth objects dataset and utilizing todays predicted data and the coming week to visualize and compare asteroid using react components to built and charts js to visualize.
 
 ![image3][image3]
 ### Feature 2
@@ -170,52 +170,61 @@ The `Development Process` is the technical implementations and functionality don
 
 #### Highlights
 <!-- stipulated the highlight you experienced with the project -->
-* What was good about this project, what did you learn.
-* What aspects did you enjoy.
+* I learned a lot about react components, re-usable components, charts and most of all how to implement them.
+* Getting a model I made in blender to display on my website was also highlight.
+* At the end I am proud of the design I have created.
+* Im happy with the functionality and logic I implemented and figuring it out was challenging but fun.
 
 #### Challenges
 <!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
-* Bugs.
-* Bugs.
+* Getting only 2 Radar charts to diaplay based on the two objects chosen to compare. I rather just displayed all teh objects on the chosen date. 
+* Initially getting data to display on charts. I did not understand the map function you could use. So I created a separte let for each object. Luckily I figured out I could rather just make a for loop and a array, push that array, set that array and map certain vars within that array which spared a lot of time.
+* I struggled with design. I asked around on the internet getting different opinions and feedback even non developers to improve upon my design. I went thropugh 3 iterations.
+* I struggled with charts or whole pages not loading because of my chosen data set being slow. So I implemented dummy data for sets not including an object array. And a if statement checking if the data from a certain use state or prop is undefined or empty, and if it was to rather just return a div saying loading unitil its loaded.
 
 
 #### Above And Beyond
 
-What aspects of this final build contribute to the `Above And Beyond` Component of your brief?
 <!-- what did you learn outside of the classroom and implement into your project-->
-* Name of Skill Explored.
-* Explain your understanding and execution of above skill.
+* 3D interactable models within websites.
+* Although already familiar with blender and 3D modeling, I learned about what formats web model viewers use gltf and exporting these models properly with textures tothat they showcase on the website. Google model viewer is simpl, I can set speed, enviroment lighting and size.
+<br>
+
+* Design
+* After intial feedback, I decided to grow out of my bias and expore website design. I asked for feedback on discord communities, reddit and looked at pinterest boards. I learned about the 60 30 10 color rule, how blocks can impact web flow and how there is a time and place for it.
 
 ### Future Implementation
 <!-- stipulate functionality and improvements that can be implemented in the future. -->
 
-* Future 1.
-* Future 2.
+* Only displaying two radars based on the objects you chose on the compare page.
+* Create more re-usable components.
+* Sort my components better.
+* More contextualization.
 
 <!-- MOCKUPS -->
 ## Final Outcome
 
 ### Mockups
 
-![image9](src/img/Mockup1.png)[image9]
+![Mockup One](src/img/Mockup1.png)
 <br>
 
-![image10](src/img/Mockup2.png)[image10]
+![Mockup Two](src/img/Mockup2.png)
 <br>
 
-![image11](src/img/Mockup3.png)[image11]
+![Mockup Three](src/img/Mockup3.png)
 
 <!-- VIDEO DEMONSTRATION -->
 ### Video Demonstration
 
 To see a run through of the application, click below:
 
-[View Demonstration](path/to/video/demonstration)
+[View Demonstration](https://youtu.be/_ifrJrLPCv0)
 
 <!-- AUTHORS -->
 ## Authors
 
-* **Your Name & Surname** - [EpicBlue1](https://github.com/EpicBlue1)
+* **Reinhardt de Beer** - [EpicBlue1](https://github.com/EpicBlue1)
 
 <!-- LICENSE -->
 ## License
