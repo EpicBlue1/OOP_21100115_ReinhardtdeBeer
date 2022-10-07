@@ -10,7 +10,6 @@ import { useState, useEffect, useRef } from 'react';
 import {Chart as ChartJS,CategoryScale,LinearScale,PointElement,LineElement,Title,Tooltip,Legend,} from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
-import LineDash from '../Dash'
 
 ChartJS.register(
     CategoryScale,

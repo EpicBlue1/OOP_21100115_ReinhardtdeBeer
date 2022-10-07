@@ -41,12 +41,14 @@
 }
 
 .AsImg{
-    margin-top: 20px;
     margin-bottom: 25px;
-    width: 60%;
-    height: 30% !important;
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    margin-bottom: 6%;
+    height: 15vh !important;
     background-position: center !important;
-    background-size: contain;
+    background-size: cover;
 }
 
 .AsobjHeight{

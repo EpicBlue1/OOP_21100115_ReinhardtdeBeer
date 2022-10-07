@@ -12,7 +12,6 @@ import { useState, useEffect, useRef } from 'react';
 import AsGra from './AsteroidRadar';
 import Astobj from './AstroidObj';
 import {Link} from 'react-router-dom';
-import Dash from '../Dash';
 
 ChartJS.register(ArcElement, Tooltip, RadialLinearScale, PointElement, LineElement, Filler, Legend);
 
@@ -79,7 +78,7 @@ const DashChart = (props) =>{
                 },
             ],
         }}
-                />
+    />
 </>
         
         

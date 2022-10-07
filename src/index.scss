@@ -1,6 +1,6 @@
 body {
-  background-color: #090B0F !important;
-  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.0), rgba(9, 11, 15, 1) 50%), url('img/Slide\ 16_9\ -\ 1\ \(1\).png') ;
+  background-color: #011222 !important;
+  // background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.0), rgba(9, 11, 15, 1) 50%), url('img/Slide\ 16_9\ -\ 1\ \(1\).png') ;
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,6 +11,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.App{
+  padding: 0 !important;
 }
 
 .Radars{
@@ -85,13 +89,6 @@ h4{
   color: white !important;
 }
 
-/* .BackgroundImage{
-  background-image: url('img/Slide\ 16_9\ -\ 1\ \(1\).png');
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-} */
-
 .SizingIssue{
   width: 100% !important;
   margin: 0 !important;
@@ -148,129 +145,12 @@ code {
   background: #555;
 }
 
-.navStyling{
-  margin: 0 auto;
-  margin-top: 1vh !important;
-  border-radius: 10px !important;
-  padding-left: 5%;
-  width: 98.5% !important;
-  height: max-content;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  background-color: #422D53;
-  box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.10);
--webkit-box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.10);
--moz-box-shadow: -3px 3px 5px 0px rgba(0,0,0,0.10);
-}
 .AsConStyle button{
   background-color: #090B0F;
   border-radius:10px !important;
   box-shadow: -3px 3px 5px 0px rgba(155, 155, 155, 0.1) inset !important;
   -webkit-box-shadow: -3px 3px 5px 0px rgba(137, 137, 137, 0.1) inset !important;
   -moz-box-shadow: -3px 3px 5px 0px rgba(145, 145, 145, 0.1) inset !important;
-}
-
-.Icons{
-  width: 450px;
-  float: left;
-  margin-left: 55vh !important;
-}
-
-.IconOne{
-  width: 50px !important;
-  height: 50px !important;
-  background-image: url('img/Icon\ 1.png') !important;
-  background-size: contain;
-  float: left;
-  margin-right: 10vh;
-}
-
-.IconTwo{
-  width: 50px !important;
-  height: 50px !important;
-  background-image: url('img/Icon\ 2.png') !important;
-  background-size: contain;
-  float: left;
-  margin-right: 10vh;
-}
-
-.IconThree{
-  width: 50px !important;
-  height: 50px !important;
-  background-image: url('img/Icon\ 3.png') !important;
-  background-size: contain;
-  float: left;
-  margin-right: 10%;
-}
-
-.navbarImg{
-  margin-right: 5px;
-  width: 50px;
-  height: 50px;
-  background-image: url('img/dashboard2_png.png');
-  background-size: 55% !important;
-  background-position: center !important;
-  background-size: cover;
-  background-repeat: no-repeat !important;
-  background-color: white;
-  border-radius: 150px;
-  float: left;
-}
-
-.navbTex{
-  font-style: italic !important;
-  font-weight: 600;
-  margin-right: 20px;
-  width: 65px;
-  height: 50px;
-  float: left;
-  font-size: 32px;
-  font-weight: semi-bold;
-  color: white;
-}
-
-@media (max-width: 600px) {
-  .Icons{
-    margin-left: 20% !important;
-  }
-  .Icons{
-    width: 150px;
-  }
-  .IconOne{
-    width: 40px !important;
-    height: 40px !important;
-    background-image: url('img/Icon\ 1.png') !important;
-    background-size: contain;
-    float: left;
-    margin-right: 5%;
-  }
-  
-  .IconTwo{
-    width: 40px !important;
-    height: 40px !important;
-    background-image: url('img/Icon\ 2.png') !important;
-    background-size: contain;
-    float: left;
-    margin-right: 5%;
-  }
-  .IconThree{
-    width: 40px !important;
-    height: 40px !important;
-    background-image: url('img/Icon\ 3.png') !important;
-    background-size: contain;
-    float: left;
-    margin-right: 5%;
-  }
-  .navbarImg{
-    margin-right: 20px;
-    width: 40px;
-    height: 40px;
-    /* background-image: url('img/PUKCOL.png'); */
-    background-color: white;
-    background-size: cover;
-    border-radius: 150px;
-    float: left;
-  }
 }
 
 p .Description{
@@ -299,44 +179,6 @@ a{
   color: white !important;
 }
 
-.Title{
-  padding-left: 5vh;
-  margin-top: 1.5vh;
-  padding-top: 5vh;
-  width: 100%;
-  height: 27vh;
-  color: white !important;
-  border-radius: 10px !important;
-}
-
-.globe_Con{
-  margin-top: 1.5vh;
-  border-radius: 10px !important;
-  width: 100%;
-  height: 27vh;
-}
-
-
-.head_section model-viewer{
-  height: 27vh !important;
-}
-
-.dateDisp{
-  color: white;
-  font-size: 24px;
-  text-align: center;
-}
-
-.dateDispStyle{
-  padding-top: 35%;
-  color: white;
-  font-size: 24px;
-  height: 27vh;
-  margin-top: 1.5vh;
-  text-align: center;
-  border-radius: 10px;
-}
-
 h2{
   padding-top: 3%;
   padding-bottom: 2%;
@@ -352,18 +194,6 @@ h2{
   font-size: 18px !important;
   font-weight: 200 !important;
 }
-
-.Title h1{
-  color: white !important;
-  font-size: 42px !important;
-  font-weight: 600 !important;
-}
-
-.head_section{
-  height: 30vh !important;
-
-}
-
 
 .Navigation{
   color: white !important;
@@ -413,16 +243,19 @@ h2{
   padding-bottom: 1% !important; 
 }
 
-.AsPrewCon{
-  height: 55vh;
-  overflow-y: auto;
-}
 .HeadingThree{
-  height: 10vh;
+  height: 3vh;
+  color: #2b2b2b;
 }
 
 .AsConStyle{
-  padding: 3%;
+  height: 44vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
   border-radius: 10px;
   width: 18%;
   margin-left: 1%;

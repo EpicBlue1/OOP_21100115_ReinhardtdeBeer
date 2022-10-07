@@ -3,16 +3,15 @@ import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Asgraph from './AstroidGraphs';
-import Timeline from './SubComponents/TimelineDash';
-import Astobj from './SubComponents/AstroidObj';
-import Dashboard from './Dash';
-import Pie from './SubComponents/ChartDash'
-import Line from './SubComponents/TimelineDash'
+import Asgraph from '../AstroidGraphs';
+import Timeline from '../SubComponents/TimelineDash';
+import Astobj from '../SubComponents/AstroidObj';
+import Pie from '../SubComponents/ChartDash'
+import Line from '../SubComponents/TimelineDash'
 import { useState, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';
-import Header from './Header';
-import './Dash.css';
+import Header from '../Header';
+import './Dash.scss';
 
 
 const Dash = () => {
@@ -157,39 +156,35 @@ const Dash = () => {
      return(
         <>
         <Header data = {Todate}/>
-        <Row className="ConDash">
-            <Col className="col-12">
-            <Col className="col-4 float">
-            <div className="infoblock">
-                <h2>Total near earth objects today</h2>
-                <p className="Number">{TotNearObj}</p>
-            </div>
-            </Col>
-            <Col className="col-4 float">
-            <div className="infoblockOne">
-                <h2>Average miss dinstance to earth today</h2>
-                <p className="Number">{AverMiss}</p>
-            </div>
-            </Col>
-            <Col className="col-4 float">
-            <div className="infoblock">
-            <h2>Average asteroid size today</h2>
-            <p className="Number">{AverSize}</p>
-            </div>
-            </Col>
 
-            </Col>
+        <Row className="ConDash">
+                <Col className="infoblock" md={{span:4}}>
+                    <h2>Total Near Earth Objects Today</h2>
+                    <p className="Number">{TotNearObj}</p>
+                </Col>
+                <Col className="infoblockOne" md={{span:4}}>
+                    <h2>Average Miss Dinstance To Earth Today</h2>
+                    <p className="Number">{AverMiss}</p>
+                </Col>
+                <Col className="infoblock" md={{span:4}}>
+                    <h2>Average Asteroid Size Today</h2>
+                    <div className="Number">{AverSize}</div>
+                </Col>
+
             <Col className="col-12 AsPrewCon">
-                <div className="Header"><h2>Visualization of 5 asteroids today</h2></div>
+                <h2>Top 5 Asteroids Today</h2>
             {DispData}
             </Col>
-            <Col className="col-4">
+
+            <Col md={{span: 12}} className="paddingTOP">Compare</Col>
+
+            <Col md={{span:4}}>
             <div className="PieChart">
-            <h2 className="DashH2">5 Near Earth Objects Today in meters</h2>
                 <Pie data={Todate}/>
             </div>
             </Col>
-            <Col className="LinePrew col-8">
+            <Col md={{span:1}}></Col>
+            <Col md={{span:7}}>
                 <Line data={Todate}/>
             </Col>
 
