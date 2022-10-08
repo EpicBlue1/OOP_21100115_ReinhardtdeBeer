@@ -1,17 +1,11 @@
 import axios from "axios";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
-import Asgraph from "../AstroidGraphs";
 import Header from "../Header";
 import Astobj from "../SubComponents/AstroidObj";
 import Pie from "../SubComponents/ChartDash";
-import {
-  default as Line,
-  default as Timeline,
-} from "../SubComponents/TimelineDash";
+import { default as Line } from "../SubComponents/TimelineDash";
 import "./Dash.scss";
 
 const Dash = () => {
