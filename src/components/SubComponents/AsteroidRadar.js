@@ -1,8 +1,8 @@
-import './AstroidObjects.css';
-import { Chart as ChartJS, ArcElement, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend } from 'chart.js';
-import { Radar } from 'react-chartjs-2';
 import axios from 'axios';
-import { useState, useEffect, useRef } from 'react';
+import { ArcElement, Chart as ChartJS, Filler, Legend, LineElement, PointElement, RadialLinearScale, Tooltip } from 'chart.js';
+import { useEffect, useRef, useState } from 'react';
+import { Radar } from 'react-chartjs-2';
+import './AstroidObjects.css';
 
 ChartJS.register(ArcElement, Tooltip, RadialLinearScale, PointElement, LineElement, Filler, Legend);
 

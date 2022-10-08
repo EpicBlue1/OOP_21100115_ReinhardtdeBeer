@@ -1,41 +1,41 @@
-.descriptionArea{
-    margin: 0 auto;
-    margin-top: 5%;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #3b3b3b8a;
-    width: "90%";
-    height: 20vh;
-    color: white;
+.descriptionArea {
+  margin: 0 auto;
+  margin-top: 5%;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #3b3b3b8a;
+  width: "90%";
+  height: 20vh;
+  color: white;
 }
 
-.ObjDrop{
-    width: 30%;
-    background-color: #1b1b1b;
-    border: none;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    height: 30px;
-    text-align: center;
-    color: white;
-  }
-
-.Heading{
-    text-align: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    color: white;
+.ObjDrop {
+  width: 30%;
+  background-color: #1b1b1b;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  height: 30px;
+  text-align: center;
+  color: white;
 }
 
-.Descript{
-    margin: 0 auto;
-    padding: 20px !important;
-    width: 95% !important;
-    height: 15vh;
-    border-radius: 10px;
-    color: #999;
+.Heading {
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: white;
 }
 
-.TimelineCol{
-    margin-bottom: 3% !important;
+.Descript {
+  margin: 0 auto;
+  padding: 20px !important;
+  width: 95% !important;
+  height: 15vh;
+  border-radius: 10px;
+  color: #999;
+}
+
+.TimelineCol {
+  margin-bottom: 3% !important;
 }

@@ -6,24 +6,24 @@ body {
   background-repeat: no-repeat;
   width: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.App{
+.App {
   padding: 0 !important;
 }
 
-.Radars{
+.Radars {
   height: 50vh;
   width: 100%;
   overflow-y: auto;
 }
 
-.DateInPut{
+.DateInPut {
   width: 10%;
   background-color: #1b1b1b;
   border: none;
@@ -36,18 +36,18 @@ body {
   color: white;
 }
 
-.DateSel{
+.DateSel {
   float: right;
   background-color: #1b1b1b;
   width: 20%;
   height: 30px;
   padding-top: 0 !important;
   margin-right: 10%;
-  background-color: rgba(255, 102, 0, 1)!important;
+  background-color: rgba(255, 102, 0, 1) !important;
   border: none !important;
 }
 
-.PropertySel{
+.PropertySel {
   padding-top: 3% !important;
   float: right;
   margin-top: 10%;
@@ -56,11 +56,11 @@ body {
   height: 35px;
   padding-top: 0 !important;
   margin-right: 10%;
-  background-color: #422D53;
+  background-color: #422d53;
   border: none !important;
 }
 
-.ObjSel{
+.ObjSel {
   width: 40%;
   background-color: #1b1b1b;
   border: none;
@@ -73,14 +73,14 @@ body {
   color: white;
 }
 
-.SelectDate{
+.SelectDate {
   width: 100%;
   padding-top: 25px;
   padding-bottom: 25px;
   margin-top: 5%;
 }
 
-h4{
+h4 {
   text-align: left !important;
   height: 5vh;
   padding-bottom: 2% !important;
@@ -89,30 +89,30 @@ h4{
   color: white !important;
 }
 
-.SizingIssue{
+.SizingIssue {
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-.PieChart{
+.PieChart {
   width: 100% !important;
   height: 90vh;
   border-radius: 10px;
   padding-top: 5%;
 }
 
-.orange{
+.orange {
   color: rgba(255, 102, 0, 1);
   float: left;
 }
 
-.navbTex .orange p{
- color: white;
- float: left;
+.navbTex .orange p {
+  color: white;
+  float: left;
 }
 
-.TimeChart{
+.TimeChart {
   width: 100% !important;
   height: 70vh;
   border-radius: 10px;
@@ -120,7 +120,7 @@ h4{
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -145,15 +145,15 @@ code {
   background: #555;
 }
 
-.AsConStyle button{
-  background-color: #090B0F;
-  border-radius:10px !important;
+.AsConStyle button {
+  background-color: #090b0f;
+  border-radius: 10px !important;
   box-shadow: -3px 3px 5px 0px rgba(155, 155, 155, 0.1) inset !important;
   -webkit-box-shadow: -3px 3px 5px 0px rgba(137, 137, 137, 0.1) inset !important;
   -moz-box-shadow: -3px 3px 5px 0px rgba(145, 145, 145, 0.1) inset !important;
 }
 
-p .Description{
+p .Description {
   color: white !important;
   padding-top: 5vh;
   padding-left: 5vh;
@@ -161,33 +161,32 @@ p .Description{
   font-size: 28px !important;
 }
 
-.foto{
+.foto {
   height: 120px;
 }
 
-.bg-image{
+.bg-image {
   height: 60vh;
 }
 
-.earth{
+.earth {
   width: 100%;
-  height: 60vh !important; 
+  height: 60vh !important;
 }
 
-a{
+a {
   text-decoration: none !important;
   color: white !important;
 }
 
-h2{
+h2 {
   padding-top: 3%;
   padding-bottom: 2%;
   text-align: center;
   color: white;
 }
 
-
-.Description p{
+.Description p {
   margin: 0 auto !important;
   width: 90%;
   color: white !important;
@@ -195,29 +194,28 @@ h2{
   font-weight: 200 !important;
 }
 
-.Navigation{
+.Navigation {
   color: white !important;
 }
 
-.EarthOne{
+.EarthOne {
   height: 30vh;
   width: 100%;
   background-size: cover;
 }
 
-.Background{
+.Background {
   background-color: #555;
 }
 
-
-.Timeline{
+.Timeline {
   height: 450px;
   background-color: #555;
 }
 
-.Graph{
+.Graph {
   height: 350px;
-  background-color: black; 
+  background-color: black;
 }
 
 /* button {
@@ -234,21 +232,21 @@ h2{
 	font-size: 16px;
 } */
 
-.LinePrew{
+.LinePrew {
   margin: 0 auto !important;
   color: white !important;
   margin-top: 4% !important;
   padding-left: 10% !important;
   padding-right: 5% !important;
-  padding-bottom: 1% !important; 
+  padding-bottom: 1% !important;
 }
 
-.HeadingThree{
+.HeadingThree {
   height: 3vh;
   color: #2b2b2b;
 }
 
-.AsConStyle{
+.AsConStyle {
   height: 44vh;
   display: flex;
   flex-direction: column;
@@ -262,31 +260,30 @@ h2{
   float: left;
 }
 
-h3{
+h3 {
   font-size: 16px !important;
   text-align: center !important;
   color: white;
 }
 
-.IconButton{
-  background-color: #422D53 !important;
+.IconButton {
+  background-color: #422d53 !important;
   border: none !important;
   height: 50px !important;
   padding-top: 0 !important;
 }
 
-.butt button{
-  float:left !important;
+.butt button {
+  float: left !important;
   color: white !important;
 }
 
-.butt{
+.butt {
   height: 100px;
   padding-top: 1.5%;
-  margin: 0 auto!important;
+  margin: 0 auto !important;
   width: 370px !important;
 }
-
 
 /* button:hover {
 	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
@@ -294,19 +291,17 @@ h3{
 	transition: 100ms;
 } */
 
-.dateSel{
+.dateSel {
   margin-top: 3%;
-  margin-bottom:10%;
+  margin-bottom: 10%;
   padding: 5px;
   float: left;
-	width: 30vh;
-	height: 50px;
-	cursor: pointer;
-	background: #333 !important;
-	border: 2px solid white !important;
-	border-radius: 10px !important;
+  width: 30vh;
+  height: 50px;
+  cursor: pointer;
+  background: #333 !important;
+  border: 2px solid white !important;
+  border-radius: 10px !important;
   color: white !important;
   border: none !important;
 }
-
-
