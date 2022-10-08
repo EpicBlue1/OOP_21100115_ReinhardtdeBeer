@@ -1,8 +1,4 @@
-import axios from "axios";
-import { useEffect, useRef, useState } from "react";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
 import Style from "./Nav.module.scss";

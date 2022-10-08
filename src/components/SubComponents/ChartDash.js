@@ -1,4 +1,3 @@
-import { faker } from "@faker-js/faker";
 import axios from "axios";
 import {
   ArcElement,
@@ -11,14 +10,7 @@ import {
   Tooltip,
 } from "chart.js";
 import React, { useEffect, useRef, useState } from "react";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Image from "react-bootstrap/Image";
-import Row from "react-bootstrap/Row";
 import { Pie } from "react-chartjs-2";
-import { Link } from "react-router-dom";
-import AsGra from "./AsteroidRadar";
-import Astobj from "./AstroidObj";
 import "./AstroidObjects.css";
 
 ChartJS.register(

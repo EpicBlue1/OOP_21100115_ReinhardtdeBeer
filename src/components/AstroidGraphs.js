@@ -11,10 +11,7 @@ import {
 } from "chart.js";
 import React, { useEffect, useRef, useState } from "react";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
-import { Radar } from "react-chartjs-2";
 import AsGraph from "./SubComponents/AsGraph";
 import AsRad from "./SubComponents/AsteroidRadar";
 import "./SubComponents/AstroidObjects.css";
@@ -31,12 +28,10 @@ ChartJS.register(
 );
 
 const AstroidGraphs = () => {
-  const [Selection, setSelection] = useState("2015-01-27");
   const [DatesComp, setDatesComp] = useState([]);
   const [PieInfo, setPieInfo] = useState([]);
   const [DropdownDefault, setDropdownDefault] = useState("Loading...");
   const [Rad, setRad] = useState([]);
-  const [RadTwo, setRadTwo] = useState([]);
 
   const [ObjectOneIfo, setObjectOneIfo] = useState();
 
@@ -46,7 +41,6 @@ const AstroidGraphs = () => {
   const [ObjValTwo, setObjValTwo] = useState(1);
 
   const FirstVal = useRef();
-  const SecondVal = useRef();
   const FirstObj = useRef();
   const SecondObj = useRef();
 

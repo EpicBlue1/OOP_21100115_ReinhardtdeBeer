@@ -1,4 +1,3 @@
-import { faker } from "@faker-js/faker";
 import axios from "axios";
 import {
   CategoryScale,
@@ -10,13 +9,8 @@ import {
   Title,
   Tooltip,
 } from "chart.js";
-import React, { useEffect, useRef, useState } from "react";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Image from "react-bootstrap/Image";
-import Row from "react-bootstrap/Row";
+import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
-import { Link } from "react-router-dom";
 import "./AstroidObjects.css";
 
 ChartJS.register(
@@ -32,8 +26,6 @@ ChartJS.register(
 //navigation
 const Timeline = (props) => {
   const [TimeLineInfo, setTimeLineInfo] = useState([]);
-  const [DispData, setDispData] = useState([]);
-  // const [labels, setLabels] = useState([]);
 
   //force update
   const [, updateState] = React.useState();

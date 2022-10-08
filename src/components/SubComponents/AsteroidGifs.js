@@ -1,8 +1,5 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
-import Row from "react-bootstrap/Row";
-import { Link } from "react-router-dom";
-import Gifs from "./AsteroidGifs";
 import Astobj from "./AstroidObj";
 import "./AstroidObjects.css";
 

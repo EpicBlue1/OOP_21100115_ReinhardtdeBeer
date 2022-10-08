@@ -1,4 +1,3 @@
-import { faker } from "@faker-js/faker";
 import axios from "axios";
 import {
   CategoryScale,
@@ -12,11 +11,8 @@ import {
 } from "chart.js";
 import { useEffect, useRef, useState } from "react";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 import { Line } from "react-chartjs-2";
-import { Link } from "react-router-dom";
 import "./SubComponents/AstroidObjects.css";
 import "./timeline.css";
 
