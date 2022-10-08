@@ -61,13 +61,7 @@ const Timeline = (props) => {
 
         const sortedDates = Dates.sort((b, a) => b.DateNum - a.DateNum);
 
-        // let DateTwoName = 'Object ' + [1] + ' ' + data[2].name;
-        // let DateThreeName = 'Object ' + [2] + ' ' + data[3].name;
-        // let DateFourName = 'Object ' + [3] + ' ' + data[4].name;
-        // let DateFiveName = 'Object ' + [4] + ' ' + data[5].name;
-
         setTimeLineInfo(sortedDates);
-        // setDispData([DateOneName, DateTwoName, DateThreeName, DateFourName, DateFiveName]);
       });
   }, []); //only run once
 
@@ -93,8 +87,8 @@ const Timeline = (props) => {
           {
             label: "5 Near Object Sizes By Time In Meters Today",
             data: labels.map((o) => o.Size),
-            borderColor: "rgba(255, 102, 0, 1)",
-            backgroundColor: "rgba(255, 102, 0, 0.5)",
+            borderColor: "rgba(217, 100, 43, 1)",
+            backgroundColor: "rgba(217, 100, 43, 0.5)",
           },
         ],
       }}

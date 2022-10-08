@@ -9,7 +9,7 @@ import {
   RadialLinearScale,
   Tooltip,
 } from "chart.js";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import "./AstroidObjects.css";
 
@@ -24,10 +24,7 @@ ChartJS.register(
 );
 
 const DashChart = (props) => {
-  const [RadData, setRadData] = useState([]);
-  const RadarGr = [0];
   const [PieInfo, setPieInfo] = useState([]);
-  const [DispData, setDispData] = useState(0);
 
   //force update
   const [, updateState] = React.useState();

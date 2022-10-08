@@ -37,10 +37,10 @@ const AsGraphsOne = (props) => {
               label: "# of Votes",
               data: props.data.map((o) => o.Size),
               backgroundColor: [
-                "rgba(181, 156, 201, 0.75)",
-                "rgba(131, 90, 165, 0.75)",
+                "rgba(31, 89, 141, 0.75)",
+                "rgba(23, 56, 89, 0.75)",
               ],
-              borderColor: ["rgba(181, 156, 201, 1)", "rgba(131, 90, 165, 1)"],
+              borderColor: ["rgba(31, 89, 141, 0)", "rgba(31, 89, 141, 0)"],
               borderWidth: 1,
             },
           ],

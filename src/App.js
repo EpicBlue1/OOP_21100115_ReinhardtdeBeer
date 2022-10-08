@@ -1,11 +1,10 @@
 import Container from "react-bootstrap/Container";
 import { Route, Routes } from "react-router-dom";
-import Asgraph from "./components/AstroidGraphs";
+import Asgraph from "./components/AstroidGraphs/AstroidGraphs";
 import Dashboard from "./components/Dash/Dash";
-import Header from "./components/Header";
 import Footer from "./components/SubComponents/Footer/Footer";
 import Navigation from "./components/SubComponents/NavigationBar/Nav";
-import Timeline from "./components/TimeLinePage";
+import Timeline from "./components/TimelinePage/TimeLinePage";
 import "./index.scss";
 
 function App() {

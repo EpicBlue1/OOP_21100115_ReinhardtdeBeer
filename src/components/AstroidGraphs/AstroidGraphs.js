@@ -12,10 +12,11 @@ import {
 import React, { useEffect, useRef, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import AsGraph from "./SubComponents/AsGraph";
-import AsRad from "./SubComponents/AsteroidRadar";
-import "./SubComponents/AstroidObjects.css";
-import BarChart from "./SubComponents/bartChart";
+import AsGraph from "../SubComponents/AsGraph";
+import AsRad from "../SubComponents/AsteroidRadar";
+import "../SubComponents/AstroidObjects.css";
+import BarChart from "../SubComponents/bartChart";
+import "./AstroidGraphs.scss";
 
 ChartJS.register(
   ArcElement,
@@ -30,7 +31,10 @@ ChartJS.register(
 const AstroidGraphs = () => {
   const [DatesComp, setDatesComp] = useState([]);
   const [PieInfo, setPieInfo] = useState([]);
-  const [DropdownDefault, setDropdownDefault] = useState("Loading...");
+  const [DropdownDefault, setDropdownDefault] = useState(
+    "Waiting for change..."
+  );
+
   const [Rad, setRad] = useState([]);
 
   const [ObjectOneIfo, setObjectOneIfo] = useState();
@@ -237,22 +241,19 @@ const AstroidGraphs = () => {
       <Row>
         <h1 className="Heading">Near Earth Objects 2015 September</h1>
       </Row>
-      <Row>
-        <div className="Description">
-          <p>
-            Welcome to the comparison page. Choose any date from this week to
-            compare the sizes of near-Earth objects using a bar graph and a pie
-            chart. A summary of all objects on the selected date is provided,
-            including their MissDistance, Size, Magnitude, and Velocity.
-          </p>
-        </div>
+      <Row className="AsGrpahs">
+        <p>
+          Welcome to the comparison page. Choose any date from this week to
+          compare the sizes of near-Earth objects using a bar graph and a pie
+          chart. A summary of all objects on the selected date is provided,
+          including their MissDistance, Size, Magnitude, and Velocity.
+        </p>
       </Row>
-      <Row>
+      <Row className="AsGraphsContent">
         <Col>
           <div className="GraphOne">
             <div className="SelectDate">
-              <h4>Select a date to compare objects</h4>
-
+              <h2>Select a date to compare objects</h2>
               <select className="ObjSel" onChange={FirstDate} ref={FirstVal}>
                 <option>{DropdownDefault}</option>
                 {DatesComp.map((date) => (
@@ -264,7 +265,7 @@ const AstroidGraphs = () => {
             </div>
 
             <div className="SelectDate">
-              <h4>Select Asteroids to Compare</h4>
+              <h2>Select Asteroids to Compare</h2>
               <select className="ObjSel" onChange={SelOneObj} ref={FirstObj}>
                 {PieInfo.map((date) => (
                   <option value={date.Index}>{date.Name}</option>
@@ -288,8 +289,11 @@ const AstroidGraphs = () => {
         <Col>
           <div className="GraphTwo">
             <h2>Object Stats {DateSelOne}</h2>
+            <p>Scroll down</p>
             <div className="Radars">{RadData}</div>
           </div>
+          <br></br>
+          <br></br>
           <div className="GraphTwo">
             <BarChart data={ObjectOneIfo} />
             <div className="Description">

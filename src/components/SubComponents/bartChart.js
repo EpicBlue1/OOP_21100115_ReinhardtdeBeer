@@ -57,14 +57,14 @@ const barChart = (props) => {
             {
               label: firstHalf.map((o) => o.Name),
               data: firstHalf.map((o) => o.Size),
-              borderColor: "rgba(181, 156, 201, 1)",
-              backgroundColor: "rgba(181, 156, 201, 0.75)",
+              borderColor: "rgba23, 56, 89, 0)",
+              backgroundColor: "rgba(23, 56, 89, 0.75)",
             },
             {
               label: secondHalf.map((o) => o.Name),
               data: secondHalf.map((o) => o.Size),
-              borderColor: "rgba(131, 90, 165, 1)",
-              backgroundColor: "rgba(131, 90, 165, 0.75)",
+              borderColor: "rgba(31, 89, 141, 0)",
+              backgroundColor: "rgba(31, 89, 141, 0.75)",
             },
           ],
         }}

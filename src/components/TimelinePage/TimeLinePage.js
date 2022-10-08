@@ -13,8 +13,8 @@ import { useEffect, useRef, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Line } from "react-chartjs-2";
-import "./SubComponents/AstroidObjects.css";
-import "./timeline.css";
+import "../SubComponents/AstroidObjects.css";
+import "./Timelines.scss";
 
 ChartJS.register(
   CategoryScale,
@@ -149,10 +149,8 @@ const TimelinePage = () => {
   return (
     //fragment
     <>
-      <Row>
+      <Row className="TimelineHead">
         <h1 className="Heading">Timeline</h1>
-      </Row>
-      <Row>
         <div className="Description">
           <p>
             Welcome to the near earth objects Timeline of tomorrow. Given in
@@ -162,7 +160,7 @@ const TimelinePage = () => {
           </p>
         </div>
       </Row>
-      <Row>
+      <Row className="TimelineContent">
         <Col className="col-8 TimelineCol">
           <Line
             options={{
@@ -180,8 +178,8 @@ const TimelinePage = () => {
                 {
                   label: LabelInfo,
                   data: LineData,
-                  borderColor: "rgba(255, 102, 0, 1)",
-                  backgroundColor: "rgba(255, 102, 0, 0.5)",
+                  borderColor: "rgba(217, 100, 43, 1)",
+                  backgroundColor: "rgba(217, 100, 43, 0.5)",
                 },
               ],
             }}
@@ -189,7 +187,7 @@ const TimelinePage = () => {
             width={1200}
           />
         </Col>
-        <Col className="col-4">
+        <Col className="col-4 TimelineDesc">
           <h2>Select Property</h2>
 
           <select className="ObjDrop" onChange={updateProperties} ref={selVal}>
